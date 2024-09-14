@@ -84,18 +84,28 @@
             ],
             "tsConfig": "tsconfig.spec.json",
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
+              "public",
+              "src/favicon.ico"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css",
+              "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css",
+              "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css",
+              "https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap",
+              "https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap"
             ],
-            "scripts": []
+            "scripts": [
+              "https://code.jquery.com/jquery-3.5.1.slim.min.js",
+              "https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js",
+              "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+            ]
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "81e25d3e-57e0-4995-911c-8be0b48fcd17"
   }
 }
