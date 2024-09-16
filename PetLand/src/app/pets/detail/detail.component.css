@@ -1,0 +1,51 @@
+/* Contenedor general */
+.pet-details {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Encabezado */
+  .pet-details h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  /* Información de la mascota */
+  .pet-details p {
+    margin-bottom: 12px;
+    font-size: 18px;
+    color: #555;
+  }
+  
+  .pet-details p span {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Imagen de la mascota */
+  .pet-image {
+    max-width: 100%;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  

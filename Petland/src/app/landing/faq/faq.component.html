@@ -1,1 +1,52 @@
-<p>faq works!</p>
+<section class="main-container">
+    <!-- Formulario de contacto -->
+    <section class="formulario">
+        <div class="form-container">
+          <h1>Contacto</h1>
+          <!-- Formulario HTML normal con ngSubmit -->
+          <form (submit)="handleFormSubmit($event)">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name" required>
+      
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email" required>
+      
+            <label for="message">Mensaje:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+      
+            <button type="submit">Enviar</button>
+          </form>
+          <p>{{ responseMessage }}</p>
+        </div>
+      </section>
+      
+  
+<!-- Preguntas Frecuentes (FAQ) solo texto normal -->
+<section class="faq-section">
+    <h2>Preguntas Frecuentes</h2>
+
+    <div class="faq-item">
+      <p class="faq-question">¿Cuál es el horario de atención?</p>
+      <div class="faq-answer">
+        <p>Nuestro horario de atención es de lunes a viernes de 8:00 AM a 6:00 PM y los sábados de 9:00 AM a 1:00 PM.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-question">¿Cuál es el costo de una consulta veterinaria?</p>
+      <div class="faq-answer">
+        <p>El costo puede variar según el tipo de consulta y los tratamientos necesarios. Le proporcionaremos una estimación antes de realizar cualquier procedimiento.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-question">¿Ofrecen servicios de emergencia?</p>
+      <div class="faq-answer">
+        <p>Sí, ofrecemos servicios de emergencia las 24 horas, los 7 días de la semana.</p>
+      </div>
+    </div>
+</section>
+
+      
+  </section>
+  

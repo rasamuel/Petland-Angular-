@@ -1,36 +1,23 @@
-/* Importa la fuente */
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  font-family: 'Poppins', sans-serif;
-}
-
-body {
-  font-family: 'Poppins', sans-serif; /* Nueva fuente */
-  font-size: 18px; /* Aumenta el tamaño base */
-  margin-top: 80px;
-}
-
+/* Asegura que el navbar esté alineado correctamente */
 .navbar {
-  background-color: #c2c2a3; /* Color de fondo */
-  padding: 15px 0; /* Aumenta el padding vertical */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra más visible */
+  background-color: #c2c2a3;
+  padding: 10px 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   width: 100%;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Alineación vertical */
 }
 
-/* Ajustamos el padding lateral para evitar que los elementos queden pegados a los bordes */
 .navbar-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-left: 20px; /* Espacio a la izquierda */
-  padding-right: 20px; /* Espacio a la derecha */
+  width: 100%; /* Asegura que el contenido ocupe todo el ancho */
 }
 
 .navbar-left {
@@ -39,51 +26,53 @@ body {
 }
 
 .logo {
-  height: 60px; /* Aumenta el tamaño del logo */
+  height: 60px;
   margin-right: 15px;
 }
 
 .navbar-brand {
-  font-size: 28px; /* Aumenta el tamaño del texto */
-  font-weight: 600; /* Aumenta el grosor de la fuente */
+  font-size: 28px;
+  font-weight: 600;
   color: #000;
   text-decoration: none;
-  margin-right: 20px; /* Ajusta la distancia entre el nombre y las secciones */
+  margin-right: 20px;
 }
 
 .navbar-center {
+  margin-top: 20px;
   display: flex;
   list-style: none;
-  margin-left: 0;
+  margin-left: -50px; 
 }
 
 .navbar-center li {
-  margin-left: 20px; /* Ajusta el espaciado entre los elementos */
+  margin-left: 20px;
 }
 
 .navbar-center a {
   text-decoration: none;
   color: #333;
-  font-size: 20px; /* Aumenta el tamaño de las secciones */
-  font-weight: 500; /* Grosor medio */
+  font-size: 20px;
+  font-weight: 500;
 }
 
 .navbar-right {
   display: flex;
-  gap: 15px; /* Más espacio entre los botones */
+  align-items: center; /* Alineación vertical correcta */
+  gap: 15px; /* Espacio entre los botones */
 }
 
 .btn {
-  border: 2px solid green; /* Borde verde */
-  padding: 12px 24px; /* Botones más grandes */
-  font-size: 16px; /* Texto más grande en los botones */
+  border: 2px solid green;
+  padding: 10px 24px;
+  font-size: 16px;
   cursor: pointer;
-  background-color: green; /* Fondo verde */
-  color: white; /* Texto blanco */
-  border-radius: 8px; /* Bordes más redondeados */
+  background-color: green;
+  color: white;
+  border-radius: 8px;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .btn:hover {
-  background-color: darkgreen; /* Efecto hover: verde más oscuro */
+  background-color: darkgreen;
 }

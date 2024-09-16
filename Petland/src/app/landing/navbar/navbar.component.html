@@ -5,17 +5,19 @@
       <img src="images/Logo.png" alt="PetLand Logo" class="logo">
       <a href="/" class="navbar-brand">PetLand</a>
       <ul class="navbar-center">
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#quienes-somos">Quiénes Somos</a></li>
-        <li><a href="#servicios">Servicios</a></li>
-        <li><a href="#sedes">Nuestras Sedes</a></li>
+        <li><a routerLink="/">Inicio</a></li>
+        <li><a routerLink="/" fragment="servicios">Servicios</a></li>
+        <li><a routerLink="/" fragment="quienes-somos">Quiénes Somos</a></li>
+        <li><a routerLink="/" fragment="nuestras-sedes">Nuestras Sedes</a></li>
+        <li><a routerLink="/" fragment="faq">Contacto</a></li>
+        <li><a routerLink="/mascotas">Gestión de Mascotas</a></li>
       </ul>
     </div>
 
     <!-- Botones de login -->
     <div class="navbar-right">
       <button class="btn login-btn">Iniciar Sesión</button>
-      <button class="btn register-btn">Registrarse</button>
+      <button class="btn register-btn">Portal Veterinario</button>
     </div>
   </div>
 </nav>
