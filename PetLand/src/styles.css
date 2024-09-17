@@ -2,3 +2,26 @@ html {
     scroll-behavior: smooth;
   }
   
+  .flex-column{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .flex-row{
+    display: flex;
+    flex-direction: row;
+  }
+
+  .center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .mg-10{
+    margin: 10px;
+  }
+
+  .mg-05{
+    margin: 5px;
+  }
