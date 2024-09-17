@@ -54,4 +54,20 @@ export class ListComponent {
   getDefaultPet(): Pet {
     return new Pet(0, '', '', 0, 0, '', true, '');
   }
+
+  searchPets(event: Event, query: string) {
+    event.preventDefault();  // Evitar el comportamiento predeterminado del formulario
+
+    if (query) {
+        this.pets = this.petService.getPets().filter(pet =>
+            pet.nombre.toLowerCase().includes(query.toLowerCase()) || 
+            pet.raza.toLowerCase().includes(query.toLowerCase())
+        );
+    } else {
+        // Si no hay búsqueda, mostrar todas las mascotas
+        this.pets = this.petService.getPets();
+    }
+}
+
+
 }
