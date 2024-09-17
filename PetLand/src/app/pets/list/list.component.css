@@ -1,79 +1,104 @@
-/* General */
-.table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-  }
-  
-  .table th, .table td {
-    padding: 12px;
-    border: 1px solid #ddd;
-    text-align: left;
-    vertical-align: middle;
-  }
-  
-  .table th {
-    background-color: #f4f4f4;
-    font-weight: bold;
-    text-transform: uppercase;
-  }
-  
-  .table tr:nth-child(even) {
-    background-color: #f9f9f9;
-  }
-  
-  .table tr:hover {
-    background-color: #f1f1f1;
-  }
-  
-  .table button {
-    padding: 8px 12px;
-    margin-right: 5px;
-    font-size: 14px;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .btn-success {
-    background-color: #28a745;
-    color: white;
-  }
-  
-  .btn-success:hover {
-    background-color: #218838;
-  }
-  
-  .btn-primary {
-    background-color: #007bff;
-    color: white;
-  }
-  
-  .btn-primary:hover {
-    background-color: #0056b3;
-  }
-  
-  .btn-danger {
-    background-color: #dc3545;
-    color: white;
-  }
-  
-  .btn-danger:hover {
-    background-color: #c82333;
-  }
-  
-  /* Botón de agregar */
-  .btn-primary-add {
-    display: inline-block;
-    margin: 20px 0;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-  }
-  
-  .btn-primary-add:hover {
-    background-color: #0056b3;
-  }
-  
+/* Estilo para la tabla */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th, td {
+  padding: 12px;
+  text-align: center; /* Centrar el contenido de las celdas */
+  border: 1px solid #ddd;
+}
+
+th {
+  background-color: #f8f9fa;
+  font-weight: bold;
+  text-transform: uppercase; /* Texto en mayúsculas */
+}
+
+td {
+  background-color: #fff;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2; /* Alterna colores de filas */
+}
+
+tr:hover {
+  background-color: #e9ecef; /* Efecto hover */
+}
+
+/* Estilo para los botones */
+button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  margin: 5px;
+}
+
+button:focus {
+  outline: none;
+}
+
+/* Botón Detalles */
+.btn-success {
+  background-color: #28a745;
+  color: white;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+}
+
+/* Botón Editar */
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* Botón Eliminar */
+.btn-danger {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+}
+
+/* Botón Agregar Mascota */
+.btn-add {
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin: 20px 0;
+}
+
+.btn-add:hover {
+  background-color: #0056b3;
+}
+
+/* Centrar título */
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+/* Estilo para el contenedor de formulario y detalles */
+div {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

@@ -5,7 +5,5 @@ import { importProvidersFrom } from '@angular/core';
 import { routes } from './app/app.routes';
 
 bootstrapApplication(AppComponent, {
-  providers: [
-    provideRouter(routes)  // Configurar el enrutamiento aquí
-  ]
-}).catch(err => console.error(err));
+  providers: [provideRouter(routes)] // Aquí se proveen las rutas
+});
