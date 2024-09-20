@@ -1,31 +1,31 @@
 import { Component, Input } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { Pet } from '../../models/pet.model';
+import { FormsModule } from '@angular/forms';  // Importa FormsModule
 import { PetService } from '../../services/pet.service';
+import { Pet } from '../../models/pet.model';
 
 @Component({
   selector: 'app-form',
   standalone: true,
-  imports: [CommonModule, FormsModule],  // Asegurarse de incluir FormsModule
+  imports: [CommonModule, FormsModule], 
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.css']
 })
 export class FormComponent {
-  @Input() pet: Pet = {   // Recibe la mascota que puede ser nueva o editada
-    id: 0,
-    nombre: '',
-    raza: '',
-    edad: 0,
-    peso: 0,
-    enfermedad: '',
-    estado: false,
-    imageUrl: ''
-  };
+  pet: Pet = new Pet(0, '', '', 0, 0, '', true, '');
+  isEditMode = false;
 
-  @Input() isEditMode = false;  // Recibe si está en modo edición o no
-
-  constructor(private petService: PetService) { }
+  constructor(private route: ActivatedRoute, private petService: PetService, private router: Router) {
+    const id = this.route.snapshot.paramMap.get('id');
+    if (id) {
+      this.isEditMode = true;
+      const petToEdit = this.petService.getPetById(+id);
+      if (petToEdit) {
+        this.pet = petToEdit;
+      }
+    }
+  }
 
   savePet() {
     if (this.isEditMode) {
@@ -33,21 +33,6 @@ export class FormComponent {
     } else {
       this.petService.addPet(this.pet);
     }
-    this.resetForm();  
-  }
-  
-  
-
-  resetForm() {
-    this.pet = {
-      id: 0,
-      nombre: '',
-      raza: '',
-      edad: 0,
-      peso: 0,
-      enfermedad: '',
-      estado: false,
-      imageUrl: ''
-    };
+    this.router.navigate(['/mascotas']);  // Redirige a la lista de mascotas después de guardar
   }
 }

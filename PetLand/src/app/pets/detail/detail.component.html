@@ -1,5 +1,11 @@
+<br>
+<br>
+<br>
+<br>
 <div *ngIf="pet">
     <h2>Detalles de {{ pet.nombre }}</h2>
+    <img [src]="pet.imageUrl" alt="Imagen de la Mascota" width="50">
+    <p><strong>Id:</strong> {{ pet.id }}</p>
     <p><strong>Raza:</strong> {{ pet.raza }}</p>
     <p><strong>Edad:</strong> {{ pet.edad }} años</p>
     <p><strong>Peso:</strong> {{ pet.peso }} kg</p>

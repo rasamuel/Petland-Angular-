@@ -1,63 +1,39 @@
-<main>
-  <h1>Lista Total de Mascotas</h1>
 
-  <!-- Sección de introducción -->
-  <section class="intro-section">
-      <p>En esta página, puedes encontrar un listado completo de todas las mascotas registradas en el sistema. Si necesitas agregar o editar información, usa los botones correspondientes.</p>
-  </section>
+<h2>Lista de Mascotas</h2>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Nombre</th>
+      <th>Raza</th>
+      <th>Edad</th>
+      <th>Imagen</th>
+      <th>Años</th>
+      <th>Peso</th>
+      <th>Enfermedad</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let pet of pets">
+        <td>{{ pet.id }}</td>
+        <td>{{ pet.nombre }}</td>
+        <td>{{ pet.raza }}</td>
+        <td><img [src]="pet.imageUrl" alt="Imagen de la Mascota" width="50"></td>
+        <td>{{ pet.edad }} años</td>
+        <td>{{ pet.peso }} kg</td>
+        <td>{{ pet.enfermedad }}</td>
+      <td>
+        <button class="btn btn-success" [routerLink]="['/mascotas', pet.id]">Detalles</button>
+        <button class="btn btn-primary" [routerLink]="['/mascotas', pet.id, 'editar']">Editar</button>
+        <button class="btn btn-danger" (click)="deletePet(pet.id)">Eliminar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
-  <!-- Formulario de búsqueda -->
-  <section class="search-section">
-    <form (submit)="searchPets($event, searchQuery.value)" class="search-form">
-        <input type="text" #searchQuery placeholder="Buscar por nombre o raza" required>
-        <button type="submit" class="search-button">Buscar</button>
-    </form>
-</section>
-
-
-  <!-- Listado de mascotas -->
-  <section class="pet-list">
-      <table class="table table-hover">
-          <thead>
-              <tr>
-                  <th>ID</th>
-                  <th>Nombre</th>
-                  <th>Raza</th>
-                  <th>Imagen</th>
-                  <th>Edad</th>
-                  <th>Peso</th>
-                  <th>Enfermedad</th>
-                  <th>Estado</th>
-                  <th>Acciones</th>
-              </tr>
-          </thead>
-          <tbody>
-              <tr *ngFor="let pet of pets">
-                  <td>{{ pet.id }}</td>
-                  <td>{{ pet.nombre }}</td>
-                  <td>{{ pet.raza }}</td>
-                  <td><img [src]="pet.imageUrl" alt="Imagen de la Mascota" width="50"></td>
-                  <td>{{ pet.edad }} años</td>
-                  <td>{{ pet.peso }} kg</td>
-                  <td>{{ pet.enfermedad }}</td>
-                  <td>{{ pet.estado ? 'Activo' : 'Inactivo' }}</td>
-                  <td class="actions">
-                      <button class="btn btn-success" (click)="showDetails(pet)">Detalles</button>
-                      <button class="btn btn-primary" (click)="editPet(pet)">Editar</button>
-                      <button class="btn btn-danger" (click)="deletePet(pet.id)">Eliminar</button>
-                  </td>
-              </tr>
-          </tbody>
-      </table>
-  </section>
-
-  <!-- Información adicional -->
-  <section class="additional-info">
-      <h2>Información Adicional</h2>
-      <ul>
-          <li><i class="fas fa-info-circle"></i> Asegúrate de revisar los detalles de cada mascota antes de realizar cualquier modificación.</li>
-          <li><i class="fas fa-calendar-alt"></i> Mantén actualizada la información de las mascotas para asegurar su correcto seguimiento.</li>
-          <li><i class="fas fa-user-check"></i> Verifica los registros periódicamente para garantizar que todos los datos sean correctos.</li>
-      </ul>
-  </section>
-</main>
+<!-- Botón para redirigir al formulario de agregar mascota -->
+<button class="btn btn-primary" [routerLink]="['/mascotas/agregar']">Agregar Mascota</button>
+<br>
+<br>
+<br>

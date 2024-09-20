@@ -1,6 +1,8 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { PetService } from '../../services/pet.service';
 import { Pet } from '../../models/pet.model';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-detail',
@@ -10,6 +12,12 @@ import { Pet } from '../../models/pet.model';
   styleUrls: ['./detail.component.css']
 })
 export class DetailComponent {
-  // Usamos Input para recibir la mascota seleccionada desde el componente padre (list.component)
-  @Input() pet: Pet | null = null; // Puede ser nulo si no hay mascota seleccionada
+  pet: Pet | undefined;  // Mascota a mostrar
+
+  constructor(private route: ActivatedRoute, private petService: PetService) {
+    const id = this.route.snapshot.paramMap.get('id');
+    if (id) {
+      this.pet = this.petService.getPetById(+id);  // Obtener la mascota por su ID
+    }
+  }
 }

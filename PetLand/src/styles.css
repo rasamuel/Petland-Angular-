@@ -26,4 +26,14 @@ html {
     margin: 5px;
   }
   .mg-02{
-    margin: 2px;}
+    margin: 2px;
+  }
+  .mg-top{
+    margin-top: 20px; 
+  }
+
+  .center{
+    align-self: center;
+    align-items: center;
+    align-content: center;
+  }

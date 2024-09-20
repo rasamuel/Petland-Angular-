@@ -4,11 +4,12 @@ import { Pet } from '../../models/pet.model';
 import { PetService } from '../../services/pet.service';
 import { FormComponent } from '../form/form.component'; 
 import { DetailComponent } from '../detail/detail.component'; 
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-list',
   standalone: true,
-  imports: [CommonModule, FormComponent, DetailComponent],
+  imports: [CommonModule, FormComponent, DetailComponent, RouterModule],
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.css']
 })
