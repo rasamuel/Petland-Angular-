@@ -37,3 +37,11 @@ html {
     align-items: center;
     align-content: center;
   }
+
+  router-outlet + * {
+    margin-top: 20px; /* Ajusta el valor según lo necesites */
+  }
+
+  main {
+    padding-top: 60px; /* Para mayor separación desde el navbar */
+  }
