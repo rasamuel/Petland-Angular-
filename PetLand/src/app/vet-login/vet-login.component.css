@@ -1,0 +1,134 @@
+/* General body style */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #f4f4f4, #f4f4f4);
+    background-color: #FFFFFF;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    color: #333;
+  }
+  
+  .login-page {
+    background: linear-gradient(to right, #f4f4f4, #f4f4f4);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+  }
+  
+  .navbar-container {
+    font-size: 20px;
+  }
+  
+  .brand-text {
+    font-size: 24px;
+    line-height: 2;
+  }
+  
+  /* Login form container */
+  .login-container {
+    width: 100%;
+    max-width: 450px;
+    padding: 40px;
+    background: #D9D4C5;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease-in-out;
+  }
+  
+  /* Input field styles */
+  .login-container input[type="text"],
+  .login-container input[type="password"] {
+    width: 100%;
+    padding: 15px;
+    margin: 12px 0;
+    border: 1px solid #A0A68A;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background: #f2f2f2;
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Input field hover and focus effects */
+  .login-container input[type="text"]:focus,
+  .login-container input[type="password"]:focus {
+    border-color: #A0A68A;
+    box-shadow: 0 0 10px rgba(125, 211, 140, 0.5);
+  }
+  
+  /* Submit button styling */
+  .login-container button[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    background-color: #133840;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .login-container button[type="submit"]:hover {
+    background-color: #A0A68A;
+    transform: scale(1.05);
+  }
+  
+  .info-container {
+    background-color: #f8f9fa;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .info-container h3,
+  .info-container h4 {
+    color: #133840;
+  }
+  
+  .info-container p {
+    color: #333;
+  }
+  
+  .info-image {
+    width: 100%;
+    max-width: 300px;
+    margin: 20px 0;
+  }
+  
+  .info-container ul {
+    list-style-type: none;
+    padding-left: 0;
+    color: #4a4a4a;
+  }
+  
+  .info-container ul li {
+    margin-bottom: 10px;
+  }
+  
+  .info-container ul li i {
+    margin-right: 8px;
+    color: #A0A68A;
+  }
+  
+  .img {
+    width: 100%;
+    max-width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+  }
+  

@@ -13,19 +13,19 @@ import { FormComponent } from "./pets/form/form.component";
 import { DetailComponent } from "./pets/detail/detail.component";
 
 
+
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
-    RouterOutlet, // Para manejar el enrutamiento
+    RouterOutlet, 
     NavbarComponent,
     CarouselComponent,
     AboutUsComponent,
     ServicesComponent,
     BranchesComponent,
     FooterComponent,
-    FaqComponent // Usa los componentes standalone
-    ,
+    FaqComponent ,
     ListComponent,
     FormComponent,
     DetailComponent

@@ -1,0 +1,44 @@
+.veterinarian-navbar {
+    background-color: #f0f4f7;  /* Fondo claro */
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Sombra sutil */
+    border-radius: 10px;
+  }
+  
+  .veterinarian-nav-list {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .veterinarian-nav-item {
+    font-size: 1.2em; /* Tamaño de fuente grande */
+  }
+  
+  .veterinarian-nav-item a {
+    text-decoration: none;
+    color: #007bff;  /* Color del enlace */
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;  /* Animación suave */
+  }
+  
+  .veterinarian-nav-item a i {
+    margin-right: 10px;
+    font-size: 1.4em;  /* Tamaño del icono */
+  }
+  
+  .veterinarian-nav-item a:hover {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .veterinarian-nav-item a:active {
+    transform: scale(0.98); /* Efecto de click */
+  }
+  

@@ -1,0 +1,74 @@
+main {
+    margin: 20px;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(35.36% 35.36% at 100% 25%,#0000 66%,#5f735a 68% 70%,#0000 72%) 32px 32px/calc(2*32px) calc(2*32px),
+    radial-gradient(35.36% 35.36% at 0    75%,#0000 66%,#5f735a 68% 70%,#0000 72%) 32px 32px/calc(2*32px) calc(2*32px),
+    radial-gradient(35.36% 35.36% at 100% 25%,#0000 66%,#5f735a 68% 70%,#0000 72%) 0 0/calc(2*32px) calc(2*32px),
+    radial-gradient(35.36% 35.36% at 0    75%,#0000 66%,#5f735a 68% 70%,#0000 72%) 0 0/calc(2*32px) calc(2*32px),
+    repeating-conic-gradient(#ffffff 0 25%,#0000 0 50%) 0 0/calc(2*32px) calc(2*32px),
+    radial-gradient(#0000 66%,#5f735a 68% 70%,#0000 72%) 0 calc(32px/2)/32px 32px
+    #ffffff;
+    margin: 10px;
+}
+
+.pet-list table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.pet-list th, .pet-list td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.pet-list th {
+    background-color: #133840;
+    color: white;
+}
+
+.pet-list tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.pet-list tr:hover td {
+    background-color: #e0f7fa;
+}
+
+.pet-image {
+    max-width: 100px;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Additional Info Section */
+.additional-info {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.additional-info:hover {
+    background-color: #f2f2f2;
+}
+
+.contact-info {
+    margin-top: 20px;
+}
+
+.contact-info address {
+    font-size: 16px;
+}
+

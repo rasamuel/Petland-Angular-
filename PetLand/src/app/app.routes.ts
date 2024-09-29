@@ -4,6 +4,9 @@ import { ListComponent } from './pets/list/list.component';
 import { FormComponent } from './pets/form/form.component';
 import { DetailComponent } from './pets/detail/detail.component';
 import { PortalVeterinarioComponent } from './portal-veterinario/portal-veterinario.component';
+import { OwnerLoginComponent } from './owner-login/owner-login.component';
+import { VetLoginComponent } from './vet-login/vet-login.component';
+import { OwnerPetsListComponent } from './owner-pets-list/owner-pets-list.component';
 
 
 export const routes: Routes = [
@@ -20,6 +23,12 @@ export const routes: Routes = [
   { path: 'mascotas/:id/editar', component: FormComponent },  // Editar mascota por su ID
 
   { path: 'portal-veterinario', component: PortalVeterinarioComponent },
+
+  { path: 'owner-login', component: OwnerLoginComponent },
+
+  { path: 'vet-login', component: VetLoginComponent },
+
+  { path: 'owner-pets-list', component: OwnerPetsListComponent },
 
   // Ruta para manejar rutas no encontradas (opcional)
   { path: '**', redirectTo: '', pathMatch: 'full' }  // Redirecciona a la página de inicio si la ruta no existe

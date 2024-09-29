@@ -1,0 +1,49 @@
+.sub-navbar {
+    background-color: #4CAF50; /* Color de fondo acorde a tu diseño */
+    padding: 10px 0;
+    margin: 0; /* Quitar márgenes */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    position: relative; /* Cambiar de sticky a relative */
+    margin-bottom: -72px;
+    margin-top: -10px;
+  }
+  
+  .sub-navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 30px; /* Espacio entre los elementos del navbar */
+  }
+  
+  .sub-navbar li {
+    margin: 0;
+  }
+  
+  .sub-navbar a {
+    text-decoration: none;
+    color: white; /* Cambiar a blanco para que contraste */
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+    padding: 10px 15px;
+    border-radius: 5px;
+  }
+  
+  .sub-navbar a:hover {
+    background-color: #3E8E41; /* Oscurecer un poco el fondo al pasar el mouse */
+  }
+  
+  .sub-navbar a.active {
+    border-bottom: 3px solid #fff;
+  }
+  
+  /* Eliminar espacios entre secciones */
+  .section {
+    padding: 50px 0;
+    margin: 0;
+  }
+  
