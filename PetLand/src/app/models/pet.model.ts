@@ -7,6 +7,7 @@ export class Pet {
   enfermedad: string;
   estado: boolean;
   imageUrl: string;
+  ownerId: number; // Relación con el dueño
 
   constructor(
     id: number = 0,
@@ -16,7 +17,8 @@ export class Pet {
     peso: number = 0,
     enfermedad: string = '',
     estado: boolean = true,
-    imageUrl: string = ''
+    imageUrl: string = '',
+    ownerId: number = 0 // Inicializando ownerId
   ) {
     this.id = id;
     this.nombre = nombre;
@@ -26,5 +28,6 @@ export class Pet {
     this.enfermedad = enfermedad;
     this.estado = estado;
     this.imageUrl = imageUrl;
+    this.ownerId = ownerId; // Estableciendo ownerId
   }
 }
