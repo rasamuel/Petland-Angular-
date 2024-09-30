@@ -1,0 +1,61 @@
+<br>
+<br>
+<br>
+<br>
+<app-veterinarian-navbar></app-veterinarian-navbar>
+<main>
+    <h1>Editar Mascota</h1>
+    <p class="form-intro">
+        Antes de actualizar los datos de la mascota, por favor, asegúrate de revisar cada campo con atención. Asegúrate de que la información esté correcta y actualizada para proporcionar el mejor cuidado posible a la mascota.
+    </p>
+    <form class="pet-edit-form">
+        <div class="form-group">
+            <label for="name">
+                <i class="fas fa-paw"></i> Nombre:
+            </label>
+            <input type="text" id="name" required class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="breed">
+                <i class="fas fa-bone"></i> Raza:
+            </label>
+            <input type="text" id="breed" required class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="imageUrl">
+                <i class="fas fa-image"></i> Imagen (URL):
+            </label>
+            <input type="text" id="imageUrl" required class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="age">
+                <i class="fas fa-calendar-day"></i> Edad:
+            </label>
+            <input type="number" id="age" required class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="weight">
+                <i class="fas fa-weight-hanging"></i> Peso:
+            </label>
+            <input type="number" id="weight" required class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="disease">
+                <i class="fas fa-syringe"></i> Enfermedad:
+            </label>
+            <input type="text" id="disease" required class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="status">
+                <i class="fas fa-stethoscope"></i> Estado:
+            </label>
+            <input type="text" id="status" required class="form-control">
+        </div>
+        <button type="submit" class="butons">Actualizar Datos</button>
+    </form>
+
+    <!-- Botón de Volver -->
+    <div style="text-align: center; margin-top: 20px;">
+        <button class="btn btn-secondary" (click)="goBack()">Volver</button>
+    </div>
+</main>

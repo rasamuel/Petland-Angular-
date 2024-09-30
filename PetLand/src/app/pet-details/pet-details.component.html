@@ -1,0 +1,41 @@
+<br>
+<br>
+<br>
+<br>
+<app-veterinarian-navbar></app-veterinarian-navbar>
+<main>
+    <h1>Detalles de la Mascota</h1>
+    <section class="pet-detail">
+        <div class="pet-detail-header">
+            <h2>mascota</h2>
+            <img [src]="" alt="Imagen Mascota" class="pet-image">
+        </div>
+        <div class="pet-detail-info">
+            <div class="info-item">
+                <i class="fas fa-dog icon"></i>
+                <p><strong>Raza:</strong></p>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-calendar-alt icon"></i>
+                <p><strong>Edad:</strong> años</p>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-weight icon"></i>
+                <p><strong>Peso:</strong> kg</p>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-medkit icon"></i>
+                <p><strong>Enfermedad:</strong></p>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-heartbeat icon"></i>
+                <p><strong>Estado:</strong></p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Botón de Volver -->
+    <div style="text-align: center; margin-top: 20px;">
+        <button class="btn btn-secondary" (click)="goBack()">Volver</button>
+    </div>
+</main>

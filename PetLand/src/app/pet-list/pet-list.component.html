@@ -1,0 +1,65 @@
+<br>
+<br>
+<br>
+<br>
+<app-veterinarian-navbar></app-veterinarian-navbar>
+<main>
+    <h1>Lista Total de Mascotas</h1>
+
+    <!-- Introducción -->
+    <section class="intro-section">
+        <p>En esta página, puedes encontrar un listado completo de todas las mascotas registradas en el sistema. Si necesitas agregar o editar información, usa los botones correspondientes.</p>
+    </section>
+
+    <!-- Formulario de Búsqueda -->
+    <section class="search-section">
+        <form (ngSubmit)="onSearch()" class="search-form">
+            <input type="text" [(ngModel)]="query" name="query" placeholder="Buscar por nombre o raza" required>
+            <button type="submit" class="search-button">Buscar</button>
+        </form>
+    </section>
+
+    <!-- Lista de Mascotas -->
+    <section class="pet-list">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Raza</th>
+                    <th>Imagen</th>
+                    <th>Edad</th>
+                    <th>Peso</th>
+                    <th>Enfermedad</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let pet of pets">
+                    <td>{{ pet.id }}</td>
+                    <td>{{ pet.nombre }}</td>
+                    <td>{{ pet.raza }}</td>
+                    <td><img [src]="pet.imageUrl" alt="Imagen de la Mascota" class="pet-image"></td>
+                    <td>{{ pet.edad }}</td>
+                    <td>{{ pet.peso }}</td>
+                    <td>{{ pet.enfermedad }}</td>
+                    <td class="actions">
+                        <button class="butons" (click)="onDetails(pet.id)">Detalles</button>
+                        <button class="butons" (click)="onEdit(pet.id)">Editar</button>
+                        <button class="delete-button" (click)="onDelete(pet.id)">Borrar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Información Adicional -->
+    <section class="additional-info">
+        <h2>Información Adicional</h2>
+        <ul>
+            <li><i class="fas fa-info-circle"></i> Asegúrate de revisar los detalles de cada mascota antes de realizar cualquier modificación.</li>
+            <li><i class="fas fa-calendar-alt"></i> Mantén actualizada la información de las mascotas para asegurar su correcto seguimiento.</li>
+            <li><i class="fas fa-user-check"></i> Verifica los registros periódicamente para garantizar que todos los datos sean correctos.</li>
+        </ul>
+    </section>
+</main>

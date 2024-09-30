@@ -8,9 +8,6 @@ import { BranchesComponent } from './landing/branches/branches.component';
 import { FooterComponent } from './landing/footer/footer.component';
 import { FaqComponent } from './landing/faq/faq.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ListComponent } from "./pets/list/list.component";
-import { FormComponent } from "./pets/form/form.component";
-import { DetailComponent } from "./pets/detail/detail.component";
 
 
 
@@ -25,10 +22,7 @@ import { DetailComponent } from "./pets/detail/detail.component";
     ServicesComponent,
     BranchesComponent,
     FooterComponent,
-    FaqComponent ,
-    ListComponent,
-    FormComponent,
-    DetailComponent
+    FaqComponent 
 ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']

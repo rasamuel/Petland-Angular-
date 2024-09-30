@@ -1,0 +1,51 @@
+<br>
+<br>
+<br>
+<br>
+<app-veterinarian-navbar></app-veterinarian-navbar>
+<main>
+  <section class="owner-details">
+    <h2>Detalles del Dueño</h2>
+    <div class="details-card">
+      <p><i class="fas fa-user"></i> <strong>Nombre:</strong> {{ owner.nombre }}</p>
+      <p><i class="fas fa-id-card"></i> <strong>Cédula:</strong> {{ owner.cedula }}</p>
+      <p><i class="fas fa-envelope"></i> <strong>Correo:</strong> {{ owner.correo }}</p>
+      <p><i class="fas fa-phone"></i> <strong>Teléfono:</strong> {{ owner.celular }}</p>
+    </div>
+  </section>
+
+  <section>
+    <h3>Mascotas</h3>
+    <div class="pet-table">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Raza</th>
+            <th>Imagen</th>
+            <th>Edad</th>
+            <th>Peso</th>
+            <th>Enfermedad</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let pet of pets">
+            <td>{{ pet.id }}</td>
+            <td>{{ pet.nombre }}</td>
+            <td>{{ pet.raza }}</td>
+            <td><img [src]="pet.imageUrl" alt="Imagen de la Mascota"></td>
+            <td>{{ pet.edad }} años</td>
+            <td>{{ pet.peso }} kg</td>
+            <td>{{ pet.enfermedad }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Botón para volver -->
+  <section>
+    <button class="btn boton" (click)="goBack()">Volver</button>
+  </section>
+</main>

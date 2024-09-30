@@ -1,0 +1,44 @@
+<br>
+<br>
+<br>
+<br>
+<app-veterinarian-navbar></app-veterinarian-navbar>
+
+<main>
+    <div class="title-container">
+        <h1><i class="fas fa-paw"></i> Mascotas Inactivas</h1>
+    </div>
+
+    <section class="pet-list">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Raza</th>
+                    <th>Imagen</th>
+                    <th>Edad</th>
+                    <th>Peso</th>
+                    <th>Enfermedad</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let pet of pets">
+                    <td>{{ pet.id }}</td>
+                    <td>{{ pet.nombre }}</td>
+                    <td>{{ pet.raza }}</td>
+                    <td><img [src]="pet.imageUrl" alt="Pet Image" class="pet-image"></td>
+                    <td>{{ pet.edad }}</td>
+                    <td>{{ pet.peso }}</td>
+                    <td>{{ pet.enfermedad }}</td>
+                    <td class="actions">
+                        <button class="btn btn-warning" (click)="activatePet(pet.id)">
+                            <i class="fas fa-sync-alt"></i> Activar
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</main>

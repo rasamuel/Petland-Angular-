@@ -1,0 +1,19 @@
+
+.pet-list .pet-image {
+    max-width: 100px;
+    height: auto;
+    border-radius: 5px;
+}
+
+.table {
+    margin-top: 20px;
+}
+
+.title-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+main {
+    margin: 20px;
+}
