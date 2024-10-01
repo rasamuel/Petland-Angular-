@@ -13,7 +13,7 @@ export class LoginService {
   // Método para autenticar a un veterinario
   loginVeterinario(correo: string, contrasena: string): Observable<any> {
     const params = { correo, contrasena };
-    return this.http.post(`${this.baseUrl}/vet/login`, null, { params });
+    return this.http.post(`http://localhost:8080/vet/login`, null, { params });
   }
   
 
