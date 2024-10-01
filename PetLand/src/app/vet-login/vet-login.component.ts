@@ -13,15 +13,15 @@ import { LoginService } from '../services/login.service';
   styleUrls: ['./vet-login.component.css']
 })
 export class VetLoginComponent {
-  nombre: string = '';
+  correo: string = '';
   contrasena: string = '';
 
   constructor(private router: Router, private loginService: LoginService) {}
 
   onSubmit() {
-    console.log('Datos capturados:', this.nombre, this.contrasena);  // Verifica si captura los datos correctamente
-    if (this.nombre && this.contrasena) {
-      this.loginService.loginVeterinario(this.nombre, this.contrasena).subscribe({
+    console.log('Datos capturados:', this.correo, this.contrasena);  // Verifica si captura los datos correctamente
+    if (this.correo && this.contrasena) {
+      this.loginService.loginVeterinario(this.correo, this.contrasena).subscribe({
         next: (response) => {
           console.log('Login exitoso:', response);
           this.router.navigate(['/portal-veterinario']);
