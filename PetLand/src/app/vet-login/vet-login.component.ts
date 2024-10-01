@@ -34,6 +34,4 @@ export class VetLoginComponent {
       alert('Por favor completa todos los campos');
     }
   }
-  
-
 }
