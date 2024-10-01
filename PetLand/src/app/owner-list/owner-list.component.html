@@ -5,53 +5,61 @@
 <app-veterinarian-navbar></app-veterinarian-navbar>
 
 <main>
-    <h1>Listado de Dueños</h1>
+  <h1>Listado de Dueños</h1>
+
+  <!-- Introducción y descripción -->
+  <section class="intro-section">
+    <p>En esta página, puedes encontrar un listado completo de todos los propietarios registrados en el sistema. Si necesitas agregar o editar información, usa los botones correspondientes.</p>
+  </section>
   
-    <!-- Introducción y descripción -->
-    <section class="intro-section">
-      <p>En esta página, puedes encontrar un listado completo de todos los propietarios registrados en el sistema. Si necesitas agregar o editar información, usa los botones correspondientes.</p>
-    </section>
-    <div class="botones">
-      <a class="boton" (click)="onAdd()">Registrar Dueño</a>
-    </div>
-    <!-- Tabla de propietarios -->
-    <section class="owner-list">
-      <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Nombre</th>
-            <th>Cédula</th>
-            <th>Correo</th>
-            <th>Teléfono</th>
-            <th>Acciones</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let owner of owners">
-            <td>{{ owner.id }}</td>
-            <td>{{ owner.nombre }}</td>
-            <td>{{ owner.cedula }}</td>
-            <td>{{ owner.correo }}</td>
-            <td>{{ owner.celular }}</td>
-            <td>
-              <button class="butons" (click)="viewDetails(owner.id)">Detalles</button>
-              <button class="butons" (click)="editOwner(owner.id)">Editar</button>
-              <button class="delete-button" (click)="deleteOwner(owner.id)">Eliminar</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
+  <!-- Campo de búsqueda -->
+  <div class="search-container">
+    <input [(ngModel)]="searchQuery" type="text" placeholder="Buscar por nombre o correo..." />
+    <button (click)="onSearch()">Buscar</button>
+    <button (click)="loadOwners()">Resetear</button>
+  </div>
+
+  <div class="botones">
+    <a class="boton" (click)="onAdd()">Registrar Dueño</a>
+  </div>
   
-    <!-- Información adicional -->
-    <section class="additional-info">
-      <h2>Información Adicional</h2>
-      <ul>
-        <li><i class="fas fa-info-circle"></i> Asegúrate de revisar los detalles de cada propietario antes de realizar cualquier modificación.</li>
-        <li><i class="fas fa-calendar-alt"></i> Mantén actualizada la información de contacto para asegurar la comunicación efectiva.</li>
-        <li><i class="fas fa-user-check"></i> Verifica los registros periódicamente para garantizar que todos los datos sean correctos.</li>
-      </ul>
-    </section>
-  </main>
-  
+  <!-- Tabla de propietarios -->
+  <section class="owner-list">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Cédula</th>
+          <th>Correo</th>
+          <th>Teléfono</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let owner of owners">
+          <td>{{ owner.id }}</td>
+          <td>{{ owner.nombre }}</td>
+          <td>{{ owner.cedula }}</td>
+          <td>{{ owner.correo }}</td>
+          <td>{{ owner.celular }}</td>
+          <td>
+            <button class="butons" (click)="viewDetails(owner.id)">Detalles</button>
+            <button class="butons" (click)="editOwner(owner.id)">Editar</button>
+            <button class="delete-button" (click)="deleteOwner(owner.id)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Información adicional -->
+  <section class="additional-info">
+    <h2>Información Adicional</h2>
+    <ul>
+      <li><i class="fas fa-info-circle"></i> Asegúrate de revisar los detalles de cada propietario antes de realizar cualquier modificación.</li>
+      <li><i class="fas fa-calendar-alt"></i> Mantén actualizada la información de contacto para asegurar la comunicación efectiva.</li>
+      <li><i class="fas fa-user-check"></i> Verifica los registros periódicamente para garantizar que todos los datos sean correctos.</li>
+    </ul>
+  </section>
+</main>
