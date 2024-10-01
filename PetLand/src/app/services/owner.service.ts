@@ -41,5 +41,8 @@ export class OwnerService {
   getOwnerPets(ownerId: number): Observable<Pet[]> {
     return this.http.get<Pet[]>(`${this.baseUrl}/${ownerId}/pets`);
   }
-
+  
+  searchOwners(query: string): Observable<Owner[]> {
+    return this.http.get<Owner[]>(`${this.baseUrl}/search?query=${query}`);
+  }
 }
