@@ -1,35 +1,27 @@
-<br>
-<br>
-<br>
-<br>
 <app-veterinarian-navbar></app-veterinarian-navbar>
 <main>
     <h1>Detalles de la Mascota</h1>
-    <section class="pet-detail">
+    <section class="pet-detail" *ngIf="pet">
         <div class="pet-detail-header">
-            <h2>mascota</h2>
-            <img [src]="" alt="Imagen Mascota" class="pet-image">
+            <h2>{{ pet.nombre }}</h2>
+            <img [src]="pet.imageUrl" alt="Imagen de la Mascota" class="pet-image">
         </div>
         <div class="pet-detail-info">
             <div class="info-item">
                 <i class="fas fa-dog icon"></i>
-                <p><strong>Raza:</strong></p>
+                <p><strong>Raza:</strong> {{ pet.raza }}</p>
             </div>
             <div class="info-item">
                 <i class="fas fa-calendar-alt icon"></i>
-                <p><strong>Edad:</strong> años</p>
+                <p><strong>Edad:</strong> {{ pet.edad }} años</p>
             </div>
             <div class="info-item">
                 <i class="fas fa-weight icon"></i>
-                <p><strong>Peso:</strong> kg</p>
+                <p><strong>Peso:</strong> {{ pet.peso }} kg</p>
             </div>
             <div class="info-item">
                 <i class="fas fa-medkit icon"></i>
-                <p><strong>Enfermedad:</strong></p>
-            </div>
-            <div class="info-item">
-                <i class="fas fa-heartbeat icon"></i>
-                <p><strong>Estado:</strong></p>
+                <p><strong>Enfermedad:</strong> {{ pet.enfermedad }}</p>
             </div>
         </div>
     </section>

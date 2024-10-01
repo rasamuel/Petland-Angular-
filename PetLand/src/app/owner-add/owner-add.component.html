@@ -16,7 +16,7 @@
 
     <section>
         <h1>Registrar Dueño</h1>
-        <form (submit)="onSubmit()">
+        <form (ngSubmit)="onSubmit()">  <!-- Cambia submit por ngSubmit -->
             <div class="form-group">
                 <label for="nombre"><i class="fas fa-user"></i> Nombre:</label>
                 <input type="text" id="nombre" [(ngModel)]="owner.nombre" name="nombre" required>

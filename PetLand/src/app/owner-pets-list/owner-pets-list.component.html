@@ -1,74 +1,70 @@
-<br>
-<br>
-
 <main>
-    <header>
-      <h1>Bienvenido, Juan Pérez</h1>
-      <p>Has iniciado sesión con éxito. Aquí puedes ver toda la información relevante sobre tus mascotas.</p>
-    </header>
-    
-    <section class="pet-list">
-      <h2>Lista de Mascotas</h2>
-      <p>A continuación, se muestra un resumen de todas las mascotas registradas bajo tu cuenta. Puedes revisar los detalles como nombre, raza, edad, peso y cualquier condición médica.</p>
-      <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Nombre</th>
-            <th>Raza</th>
-            <th>Imagen</th>
-            <th>Edad</th>
-            <th>Peso</th>
-            <th>Enfermedad</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let pet of pets">
-            <td>{{ pet.id }}</td>
-            <td>{{ pet.nombre }}</td>
-            <td>{{ pet.raza }}</td>
-            <td><img [src]="pet.imageUrl" alt="Imagen de la Mascota" class="pet-image"></td>
-            <td>{{ pet.edad }} años</td>
-            <td>{{ pet.peso }} kg</td>
-            <td>{{ pet.enfermedad }}</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-    
-    <section class="additional-info">
-      <h2>Consejos para el Cuidado de Mascotas</h2>
-      <ul>
-        <li>
-          <i class="fas fa-utensils"></i>
-          <strong>Alimentación Balanceada:</strong> Proporciona una dieta adecuada y equilibrada para mantener la salud de tu mascota.
-        </li>
-        <li>
-          <i class="fas fa-dog"></i>
-          <strong>Ejercicio Regular:</strong> Asegúrate de que tu mascota haga ejercicio regularmente para mantener su salud física y mental.
-        </li>
-        <li>
-          <i class="fas fa-heartbeat"></i>
-          <strong>Visitas al Veterinario:</strong> Realiza chequeos periódicos con el veterinario para prevenir enfermedades y mantener un buen estado de salud.
-        </li>
-        <li>
-          <i class="fas fa-shower"></i>
-          <strong>Higiene y Aseo:</strong> Mantén a tu mascota limpia y bien cuidada, incluyendo el baño regular y el cuidado de sus uñas y dientes.
-        </li>
-        <li>
-          <i class="fas fa-bed"></i>
-          <strong>Comodidad y Descanso:</strong> Proporciona un lugar cómodo y seguro para que tu mascota descanse y duerma.
-        </li>
-      </ul>
-    </section>
-    
-    <section class="contact-info">
-      <h2>Contacto</h2>
-      <p>Si necesitas asistencia o tienes alguna pregunta, no dudes en ponerte en contacto con nosotros. Estamos aquí para ayudarte con cualquier consulta relacionada con tus mascotas.</p>
-      <address>
-        <strong>Email:</strong> <a href="mailto:support@petland.com">support.com</a><br>
-        <strong>Teléfono:</strong> <a href="tel:+123456789">+123 456 789</a>
-      </address>
-    </section>
-  </main>
+  <header>
+    <h1>Bienvenido, {{ ownerName }}</h1>
+    <p>Has iniciado sesión con éxito. Aquí puedes ver toda la información relevante sobre tus mascotas.</p>
+  </header>
   
+  <section class="pet-list">
+    <h2>Lista de Mascotas</h2>
+    <p>A continuación, se muestra un resumen de todas las mascotas registradas bajo tu cuenta. Puedes revisar los detalles como nombre, raza, edad, peso y cualquier condición médica.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Raza</th>
+          <th>Imagen</th>
+          <th>Edad</th>
+          <th>Peso</th>
+          <th>Enfermedad</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let pet of pets">
+          <td>{{ pet.id }}</td>
+          <td>{{ pet.nombre }}</td>
+          <td>{{ pet.raza }}</td>
+          <td><img *ngIf="pet.imageUrl" [src]="pet.imageUrl" alt="Imagen de la Mascota" class="pet-image"></td>
+          <td>{{ pet.edad }} años</td>
+          <td>{{ pet.peso }} kg</td>
+          <td>{{ pet.enfermedad }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  
+  <section class="additional-info">
+    <h2>Consejos para el Cuidado de Mascotas</h2>
+    <ul>
+      <li>
+        <i class="fas fa-utensils"></i>
+        <strong>Alimentación Balanceada:</strong> Proporciona una dieta adecuada y equilibrada para mantener la salud de tu mascota.
+      </li>
+      <li>
+        <i class="fas fa-dog"></i>
+        <strong>Ejercicio Regular:</strong> Asegúrate de que tu mascota haga ejercicio regularmente para mantener su salud física y mental.
+      </li>
+      <li>
+        <i class="fas fa-heartbeat"></i>
+        <strong>Visitas al Veterinario:</strong> Realiza chequeos periódicos con el veterinario para prevenir enfermedades y mantener un buen estado de salud.
+      </li>
+      <li>
+        <i class="fas fa-shower"></i>
+        <strong>Higiene y Aseo:</strong> Mantén a tu mascota limpia y bien cuidada, incluyendo el baño regular y el cuidado de sus uñas y dientes.
+      </li>
+      <li>
+        <i class="fas fa-bed"></i>
+        <strong>Comodidad y Descanso:</strong> Proporciona un lugar cómodo y seguro para que tu mascota descanse y duerma.
+      </li>
+    </ul>
+  </section>
+  
+  <section class="contact-info">
+    <h2>Contacto</h2>
+    <p>Si necesitas asistencia o tienes alguna pregunta, no dudes en ponerte en contacto con nosotros. Estamos aquí para ayudarte con cualquier consulta relacionada con tus mascotas.</p>
+    <address>
+      <strong>Email:</strong> <a href="mailto:support@petland.com">"supportarrobapetland.co</a><br>
+      <strong>Teléfono:</strong> <a href="tel:+123456789">+123 456 789</a>
+    </address>
+  </section>
+</main>

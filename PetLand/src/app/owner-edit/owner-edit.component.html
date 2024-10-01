@@ -4,43 +4,44 @@
 <br>
 <app-veterinarian-navbar></app-veterinarian-navbar>
 <main>
-    <section class="tips-section">
-      <h2>Consejos antes de actualizar los datos</h2>
-      <ul>
-        <li>Verifica que toda la información ingresada sea correcta y esté actualizada.</li>
-        <li>Revisa los campos obligatorios antes de guardar los cambios.</li>
-        <li>Si cambias tu número de teléfono, asegúrate de que sea el correcto para futuras comunicaciones.</li>
-        <li>Actualiza tu correo electrónico si es necesario para mantenerte informado sobre notificaciones importantes.</li>
-        <li>Guarda los cambios regularmente para evitar perder información.</li>
-      </ul>
-    </section>
+    <h1>Editar Dueño</h1>
+    <p class="form-intro">
+        Antes de actualizar los datos del dueño, por favor, asegúrate de revisar cada campo con atención. Asegúrate de que la información esté correcta y actualizada para proporcionar el mejor servicio posible.
+    </p>
+    
+    <!-- Formulario de edición de dueño -->
+  <form (ngSubmit)="onSubmit()" class="owner-edit-form">
+    <div class="form-group">
+      <label for="nombre">
+          <i class="fas fa-user"></i> Nombre:
+      </label>
+      <input type="text" id="nombre" [(ngModel)]="owner.nombre" name="nombre" required class="form-control">
+  </div>
+  <div class="form-group">
+      <label for="cedula">
+          <i class="fas fa-id-card"></i> Cédula:
+      </label>
+      <input type="text" id="cedula" [(ngModel)]="owner.cedula" name="cedula" required class="form-control">
+  </div>
+  <div class="form-group">
+      <label for="correo">
+          <i class="fas fa-envelope"></i> Correo:
+      </label>
+      <input type="email" id="correo" [(ngModel)]="owner.correo" name="correo" required class="form-control">
+  </div>
+  <div class="form-group">
+      <label for="celular">
+          <i class="fas fa-phone"></i> Teléfono:
+      </label>
+      <input type="tel" id="celular" [(ngModel)]="owner.celular" name="celular" required class="form-control">
+  </div>
   
-    <section>
-      <h1>Editar datos del dueño</h1>
-      <form (submit)="onSubmit()">
-        <div class="form-group">
-          <label for="nombre"><i class="fas fa-user"></i> Nombre:</label>
-          <input type="text" id="nombre" [(ngModel)]="owner.nombre" name="nombre" required />
-        </div>
-        <div class="form-group">
-          <label for="cedula"><i class="fas fa-id-card"></i> Cédula:</label>
-          <input type="text" id="cedula" [(ngModel)]="owner.cedula" name="cedula" required />
-        </div>
-        <div class="form-group">
-          <label for="correo"><i class="fas fa-envelope"></i> Correo:</label>
-          <input type="email" id="correo" [(ngModel)]="owner.correo" name="correo" required />
-        </div>
-        <div class="form-group">
-          <label for="celular"><i class="fas fa-phone"></i> Teléfono:</label>
-          <input type="text" id="celular" [(ngModel)]="owner.celular" name="celular" required />
-        </div>
-        <button type="submit" class="btn submit-button"><i class="fas fa-save"></i> Actualizar</button>
-      </form>
-    </section>
-  
+  <!-- Botón de Actualizar Datos -->
+  <button type="submit" class="butons">Actualizar Datos</button>
+  </form>
+
     <!-- Botón de Volver -->
-    <section>
-      <button class="btn boton" (click)="goBack()">Volver</button>
-    </section>
-  </main>
-  
+    <div style="text-align: center; margin-top: 20px;">
+        <button class="btn btn-secondary" (click)="goBack()">Volver</button>
+    </div>
+</main>

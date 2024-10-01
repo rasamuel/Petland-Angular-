@@ -31,17 +31,16 @@ export const routes: Routes = [
   { path: 'owners/:id/edit', component: OwnerEditComponent },  // Editar un propietario
 
   // Rutas para listar mascotas del propietario
-  { path: 'owners/:id/pets', component: OwnerPetsListComponent }, // Mascotas del propietario
+  { path: 'owner-pets-list/:id', component: OwnerPetsListComponent },  // Componente donde mostrarás las mascotas del dueño
 
   // Rutas para listar, agregar, editar y ver detalles de mascotas
   { path: 'pets', component: PetListComponent },             // Lista de mascotas
   { path: 'pets/add', component: PetAddComponent },          // Agregar una mascota
   { path: 'pets/:id', component: PetDetailsComponent },      // Ver detalles de una mascota
   { path: 'pets/:id/edit', component: PetEditComponent },    // Editar una mascota
-
   // Rutas para mascotas activas e inactivas
-  { path: 'pets/activas', component: ActivePetsComponent },  // Mascotas activas
-  { path: 'pets/inactivas', component: InactivePetsComponent }, // Mascotas inactivas
+  { path: 'pets-activas', component: ActivePetsComponent },  // Mascotas activas
+  { path: 'pets-inactivas', component: InactivePetsComponent }, // Mascotas inactivas
 
   // Ruta para manejar rutas no encontradas (opcional)
   { path: '**', redirectTo: '', pathMatch: 'full' }  // Redirecciona a la página de inicio si la ruta no existe

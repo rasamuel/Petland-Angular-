@@ -1,43 +1,49 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { VeterinarianNavbarComponent } from "../veterinarian-navbar/veterinarian-navbar.component";
-
-interface Pet {
-  id: number;
-  nombre: string;
-  raza: string;
-  imageUrl: string;
-  edad: number;
-  peso: number;
-  enfermedad: string;
-  estado: string;
-}
+import { PetService } from '../services/pet.service'; // Importar el servicio de mascotas
+import { Pet } from '../models/pet.model'; // Importar el modelo de mascota
 
 @Component({
   selector: 'app-inactive-pets',
   standalone: true,
-  imports: [CommonModule, RouterModule, VeterinarianNavbarComponent ],
+  imports: [CommonModule, RouterModule, VeterinarianNavbarComponent],
   templateUrl: './inactive-pets.component.html',
   styleUrls: ['./inactive-pets.component.css']
 })
-export class InactivePetsComponent {
-  pets: Pet[] = [
-    {
-      id: 1,
-      nombre: 'Max',
-      raza: 'Bulldog',
-      imageUrl: 'assets/images/max.jpg',
-      edad: 5,
-      peso: 18,
-      enfermedad: 'Artritis',
-      estado: 'Inactiva'
-    },
-    // Agrega más mascotas inactivas aquí...
-  ];
+export class InactivePetsComponent implements OnInit {
+  pets: Pet[] = []; // Lista de mascotas inactivas
 
-  activatePet(id: number) {
-    console.log(`Activar la mascota con ID: ${id}`);
-    // Aquí puedes implementar la lógica para activar la mascota
+  constructor(private petService: PetService) { }
+
+  ngOnInit(): void {
+    this.loadInactivePets(); // Cargar las mascotas inactivas al inicializar el componente
+  }
+
+  // Método para cargar mascotas inactivas desde el backend
+  loadInactivePets(): void {
+    this.petService.getInactivePets().subscribe({
+      next: (data) => {
+        this.pets = data; // Asignar los datos recibidos a la lista de mascotas inactivas
+        console.log('Mascotas inactivas obtenidas:', this.pets);
+      },
+      error: (error) => {
+        console.error('Error al obtener las mascotas inactivas:', error);
+      }
+    });
+  }
+
+  // Método para activar una mascota
+  activatePet(id: number): void {
+    this.petService.activatePet(id).subscribe({
+      next: () => {
+        console.log(`Mascota con ID ${id} activada`);
+        this.loadInactivePets(); // Volver a cargar la lista de mascotas inactivas después de activar una
+      },
+      error: (error) => {
+        console.error(`Error al activar la mascota con ID ${id}:`, error);
+      }
+    });
   }
 }

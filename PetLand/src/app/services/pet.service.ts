@@ -1,38 +1,62 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Pet } from '../models/pet.model';
+import { Pet } from '../models/pet.model'; // Modelo de Pet
 
 @Injectable({
   providedIn: 'root'
 })
 export class PetService {
-  private baseUrl = 'http://localhost:8080/api/pets';  // Ajusta la URL según tu configuración de backend
+  private baseUrl = 'http://localhost:8080/api/pets'; // URL base del backend
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   // Obtener todas las mascotas
   getPets(): Observable<Pet[]> {
-    return this.http.get<Pet[]>(this.baseUrl);
+    return this.http.get<Pet[]>(`${this.baseUrl}`);
   }
 
-  // Obtener una mascota por su ID
+  // Buscar mascotas por nombre o raza
+  searchPets(query: string): Observable<Pet[]> {
+    return this.http.get<Pet[]>(`${this.baseUrl}/search?query=${query}`);
+  }
+
+  // Obtener detalles de una mascota por ID
   getPetById(id: number): Observable<Pet> {
     return this.http.get<Pet>(`${this.baseUrl}/${id}`);
   }
 
-  // Crear una nueva mascota
-  createPet(pet: Pet): Observable<Pet> {
-    return this.http.post<Pet>(this.baseUrl, pet);
+  // Eliminar una mascota
+  deletePet(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.baseUrl}/delete/${id}`);
   }
+  
 
-  // Actualizar una mascota existente
+  // Editar una mascota (actualización)
   updatePet(id: number, pet: Pet): Observable<Pet> {
-    return this.http.put<Pet>(`${this.baseUrl}/${id}`, pet);
+    return this.http.put<Pet>(`${this.baseUrl}/${id}/update`, pet);
+  }
+  
+  // Agregar una nueva mascota
+  addPet(pet: Pet, ownerId: number): Observable<Pet> {
+    return this.http.post<Pet>(`${this.baseUrl}/add?ownerId=${ownerId}`, pet);
+  }
+  
+  getActivePets(): Observable<Pet[]> {
+    return this.http.get<Pet[]>(`${this.baseUrl}/activas`);
   }
 
-  // Eliminar una mascota por su ID
-  deletePet(id: number): Observable<any> {
-    return this.http.delete(`${this.baseUrl}/${id}`);
+  // Desactivar una mascota
+  deactivatePet(id: number): Observable<void> {
+    return this.http.put<void>(`${this.baseUrl}/deactivate/${id}`, {});
   }
+
+  getInactivePets(): Observable<Pet[]> {
+    return this.http.get<Pet[]>(`${this.baseUrl}/inactivas`);
+  }
+
+  activatePet(id: number): Observable<void> {
+    return this.http.put<void>(`${this.baseUrl}/activate/${id}`, {});
+  }
+
 }

@@ -1,106 +1,105 @@
 /* General Styles */
 body {
-    font-family: 'Play', sans-serif;
-    background-color: #F4F4F9;
-    margin: 0;
-    padding: 0;
-    color: #333;
-  }
-  
-  main {
-    max-width: 900px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    border: 1px solid #ddd;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease-in-out;
-  }
-  
-  h1 {
-    font-family: 'Fredoka One', cursive;
-    font-size: 28px;
-    color: #4A4A4A;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  
-  .tips-section h2 {
-    color: #133840;
-    margin-bottom: 15px;
-  }
-  
-  .tips-section ul {
-    list-style: none;
-    padding-left: 0;
-  }
-  
-  .tips-section li {
-    font-size: 16px;
-    margin-bottom: 10px;
-  }
-  
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
-  .form-group label {
-    font-size: 16px;
-    color: #333;
-    margin-bottom: 5px;
-    display: block;
-  }
-  
-  .form-group input {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #CCC;
-    font-size: 14px;
-    color: #555;
-    transition: border-color 0.3s ease;
-  }
-  
-  .form-group input:focus {
-    border-color: #A0A68A;
-    outline: none;
-  }
-  
-  .submit-button {
-    background-color: #A0A68A;
-    color: #FFF;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .submit-button:hover {
-    background-color: #8D9467;
-  }
-  
-  .boton {
-    margin-top: 10px;
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    text-align: center;
-    text-decoration: none;
-    color: white;
-    background-color: #5F735A;
-    border: none;
-    border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
-  }
-  
-  .boton:hover {
-    background-color: #4e5d49;
-    transform: scale(1.05);
-  }
-  
+  font-family: 'Play', sans-serif;
+  background-color: #F4F4F9;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+main {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease-in-out;
+}
+
+h1 {
+  font-family: 'Fredoka One', cursive;
+  font-size: 28px;
+  color: #4A4A4A;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.tips-section h2 {
+  color: #133840;
+  margin-bottom: 15px;
+}
+
+.tips-section ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.tips-section li {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #CCC;
+  font-size: 14px;
+  color: #555;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+  border-color: #A0A68A;
+  outline: none;
+}
+
+.submit-button {
+  background-color: #A0A68A;
+  color: #FFF;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #8D9467;
+}
+
+.boton {
+  margin-top: 10px;
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  background-color: #5F735A;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.boton:hover {
+  background-color: #4e5d49;
+  transform: scale(1.05);
+}

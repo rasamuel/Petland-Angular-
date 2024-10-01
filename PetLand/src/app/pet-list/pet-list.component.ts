@@ -1,47 +1,83 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { VeterinarianNavbarComponent } from "../veterinarian-navbar/veterinarian-navbar.component";
+import { PetService } from '../services/pet.service'; 
+import { Pet } from '../models/pet.model'; 
 
 @Component({
   selector: 'app-pet-list',
   templateUrl: './pet-list.component.html',
   standalone: true,
-  imports: [CommonModule, FormsModule, VeterinarianNavbarComponent],
+  imports: [CommonModule, FormsModule, VeterinarianNavbarComponent], // Elimina HttpClientModule
   styleUrls: ['./pet-list.component.css']
 })
 export class PetListComponent implements OnInit {
-  pets: any[] = []; // Lista de mascotas
-  query: string = ''; // Búsqueda
+  pets: Pet[] = []; 
+  query: string = ''; 
 
-  constructor() { }
+  constructor(private petService: PetService, private router: Router) { }
 
   ngOnInit(): void {
-    // Aquí se debería cargar la lista de mascotas (por ejemplo, llamando a una API)
-    this.pets = [
-      { id: 1, nombre: 'Rex', raza: 'Pastor Alemán', imageUrl: '...', edad: 5, peso: 30, enfermedad: 'Ninguna', estado: 'Activo' },
-      { id: 2, nombre: 'Max', raza: 'Labrador', imageUrl: '...', edad: 3, peso: 25, enfermedad: 'Ninguna', estado: 'Activo' }
-      // Agrega más mascotas aquí
-    ];
+    // Cargar la lista de mascotas desde la API al inicializar el componente
+    this.petService.getPets().subscribe({
+  
+      next: (data) => {
+        this.pets = data; 
+        // Depuración: Imprimir las mascotas recibidas
+        console.log('Lista de mascotas recibidas:', this.pets); 
+  
+        // Si quieres también puedes imprimir la longitud de la lista
+        console.log('Número de mascotas:', this.pets.length);
+      },
+      error: (error) => {
+        console.error("Error al obtener la lista de mascotas", error);
+      }
+    });
   }
+  
 
   onSearch(): void {
-    // Lógica para buscar mascotas basado en la consulta (query)
-    console.log(`Buscando mascotas con: ${this.query}`);
+    if (this.query) {
+      this.petService.searchPets(this.query).subscribe({
+        next: (data) => {
+          this.pets = data;
+        },
+        error: (error) => {
+          console.error("Error al buscar mascotas", error);
+        }
+      });
+    } else {
+      this.ngOnInit();
+    }
   }
 
   onDetails(id: number): void {
-    // Lógica para ver los detalles de una mascota
-    console.log(`Detalles de la mascota con ID: ${id}`);
+    this.router.navigate([`/pets/${id}`]); // Redirige a /pets/:id para ver los detalles
   }
+  
 
   onEdit(id: number): void {
-    // Lógica para editar una mascota
-    console.log(`Editar mascota con ID: ${id}`);
+    this.router.navigate([`/pets/${id}/edit`]);
   }
 
   onDelete(id: number): void {
-    // Lógica para eliminar una mascota
-    console.log(`Eliminar mascota con ID: ${id}`);
+    if (confirm('¿Estás seguro de que deseas eliminar esta mascota?')) {  // Confirmación antes de borrar
+      this.petService.deletePet(id).subscribe({
+        next: () => {
+          console.log(`Mascota con ID ${id} eliminada`);
+          this.pets = this.pets.filter(pet => pet.id !== id);  // Eliminar la mascota de la lista en el frontend
+        },
+        error: (error) => {
+          console.error("Error al eliminar la mascota", error);
+        }
+      });
+    }
+  }
+  
+
+  onAdd(): void {
+    this.router.navigate(['/pets/add']);
   }
 }

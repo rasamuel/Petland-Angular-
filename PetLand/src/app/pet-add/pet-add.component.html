@@ -10,55 +10,56 @@
         <p class="form-intro">
             Completa el siguiente formulario para registrar una nueva mascota. Asegúrate de llenar todos los campos con la información correcta para que podamos ofrecer el mejor cuidado.
         </p>
-        <form>
+        <form (ngSubmit)="onSubmit()">
             <div class="form-group">
                 <label for="nombre">
                     <i class="fas fa-paw"></i> Nombre:
                 </label>
-                <input type="text" id="nombre" required class="form-control">
+                <input type="text" id="nombre" [(ngModel)]="pet.nombre" name="nombre" required class="form-control">
             </div>
 
             <div class="form-group">
                 <label for="raza">
                     <i class="fas fa-bone"></i> Raza:
                 </label>
-                <input type="text" id="raza" required class="form-control">
+                <input type="text" id="raza" [(ngModel)]="pet.raza" name="raza" required class="form-control">
             </div>
 
             <div class="form-group">
                 <label for="imageUrl">
                     <i class="fas fa-image"></i> Imagen URL:
                 </label>
-                <input type="text" id="imageUrl" required class="form-control">
+                <input type="text" id="imageUrl" [(ngModel)]="pet.imageUrl" name="imageUrl" required class="form-control">
             </div>
 
             <div class="form-group">
                 <label for="edad">
                     <i class="fas fa-calendar-day"></i> Edad:
                 </label>
-                <input type="number" id="edad" required class="form-control">
+                <input type="number" id="edad" [(ngModel)]="pet.edad" name="edad" required class="form-control">
             </div>
 
             <div class="form-group">
                 <label for="peso">
                     <i class="fas fa-weight-hanging"></i> Peso:
                 </label>
-                <input type="number" step="0.1" id="peso" required class="form-control">
+                <input type="number" step="0.1" id="peso" [(ngModel)]="pet.peso" name="peso" required class="form-control">
             </div>
 
             <div class="form-group">
                 <label for="enfermedad">
                     <i class="fas fa-syringe"></i> Enfermedad:
                 </label>
-                <input type="text" id="enfermedad" required class="form-control">
+                <input type="text" id="enfermedad" [(ngModel)]="pet.enfermedad" name="enfermedad" required class="form-control">
             </div>
 
             <div class="form-group">
                 <label for="owner">
                     <i class="fas fa-user"></i> Seleccione un Dueño:
                 </label>
-                <select id="owner" required class="form-control">
-                    <option value="">Seleccione un dueño</option>
+                <select id="owner" [(ngModel)]="selectedOwnerId" name="owner" required class="form-control">
+                    <option [value]="undefined">Seleccione un dueño</option>
+                    <option *ngFor="let owner of owners" [value]="owner.id">{{ owner.nombre }}</option>
                 </select>
             </div>
             
