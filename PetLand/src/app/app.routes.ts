@@ -14,6 +14,7 @@ import { PetListComponent } from './pet-list/pet-list.component';
 import { PetDetailsComponent } from './pet-details/pet-details.component';
 import { PetEditComponent } from './pet-edit/pet-edit.component';
 import { PetAddComponent } from './pet-add/pet-add.component';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
 
 export const routes: Routes = [
   { path: '', component: LandingComponent }, 
@@ -23,6 +24,7 @@ export const routes: Routes = [
   // Rutas para el login de propietarios y veterinarios
   { path: 'login/owner', component: OwnerLoginComponent },  // /login/owner en lugar de /owner-login
   { path: 'login/vet', component: VetLoginComponent },      // /login/vet en lugar de /vet-login
+  { path: 'login/admin', component: AdminLoginComponent },  // /login/admin
 
   // Rutas para listar, agregar, editar y ver detalles de dueños
   { path: 'owners', component: OwnerListComponent },           // Lista de propietarios

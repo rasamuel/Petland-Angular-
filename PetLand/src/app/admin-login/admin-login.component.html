@@ -1,0 +1,36 @@
+<div class="login-page">
+    <div class="login-container">
+      <!-- Login Box -->
+      <div class="login-box">
+        <h2 class="login-title">Administrador Login</h2>
+        <form (ngSubmit)="onSubmit()" class="login-form">
+          <div class="form-group">
+            <label for="correo">Correo</label>
+            <input type="email" id="correo" [(ngModel)]="correo" name="correo" required placeholder="Ingrese su correo" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="contrasena">Contraseña</label>
+            <input type="password" id="contrasena" [(ngModel)]="contrasena" name="contrasena" required placeholder="Ingrese su contraseña" class="form-control">
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-login">Iniciar Sesión</button>
+          </div>
+        </form>
+      </div>
+  
+      <!-- Info Box -->
+      <div class="info-box">
+        <h2 class="info-title">Bienvenido a PetLand</h2>
+        <p>
+          Administre veterinarios, dueños de mascotas, y tratamientos en un solo lugar. Como administrador, puede gestionar los usuarios del sistema, asignar roles y monitorear el estado de las clínicas.
+        </p>
+        <ul class="info-list">
+          <li><i class="fas fa-user-shield"></i> Gestión de usuarios</li>
+          <li><i class="fas fa-stethoscope"></i> Administración de veterinarios</li>
+          <li><i class="fas fa-dog"></i> Control de mascotas y sus dueños</li>
+          <li><i class="fas fa-chart-line"></i> Análisis de datos</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  

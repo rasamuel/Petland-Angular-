@@ -22,4 +22,14 @@ export class LoginService {
     const params = { cedula };
     return this.http.post(`http://localhost:8080/owners/login`, null, { params });
   }
+
+  loginAdministrador(correo: string, contrasena: string): Observable<any> {
+    return this.http.post(`http://localhost:8080/admin/login`, null, {
+      params: {
+        correo: correo,
+        contrasena: contrasena
+      },
+      withCredentials: true
+    });
+  }
 }
