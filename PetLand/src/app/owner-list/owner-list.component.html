@@ -13,12 +13,14 @@
   </section>
   
   <!-- Campo de búsqueda -->
-  <div class="search-container">
-    <input [(ngModel)]="searchQuery" type="text" placeholder="Buscar por nombre o correo..." />
-    <button (click)="onSearch()">Buscar</button>
-    <button (click)="loadOwners()">Resetear</button>
+  <div class="search-section">
+    <div class="search-form">
+      <input [(ngModel)]="searchQuery" type="text" placeholder="Buscar por nombre o correo..." />
+      <button (click)="onSearch()" class="search-button">Buscar</button>
+      <button (click)="loadOwners()" class="search-button">Resetear</button>
+    </div>
   </div>
-
+  <br>
   <div class="botones">
     <a class="boton" (click)="onAdd()">Registrar Dueño</a>
   </div>

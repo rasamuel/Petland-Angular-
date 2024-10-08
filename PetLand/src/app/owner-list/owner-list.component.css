@@ -210,3 +210,40 @@ p {
 .delete-button:hover {
     background-color: #c82333; /* Color de fondo rojo oscuro en hover */
 }
+
+.search-section {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 2s ease-in-out;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Asegura que el botón y el input estén separados */
+    width: 100%; /* Ocupa el 100% del ancho disponible */
+}
+
+.search-form input[type="text"] {
+    flex: 1; /* Asegura que el input ocupe todo el espacio disponible */
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    margin-right: 5px; /* Agrega un pequeño espacio entre el input y el botón */
+}
+
+.search-form button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 0 5px 5px 0;
+    background-color: #5F735A;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
