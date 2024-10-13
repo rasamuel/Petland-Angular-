@@ -1,0 +1,58 @@
+<br>
+<br>
+<br>
+<br>
+<app-admin-navbar></app-admin-navbar>
+<main>
+    <!-- Sección para registrar un nuevo veterinario -->
+    <section class="add-veterinarian-form">
+        <h2>Registrar un Veterinario</h2>
+        <p class="form-intro">
+            Completa el siguiente formulario para registrar un nuevo veterinario. Asegúrate de llenar todos los campos con la información correcta para mantener un registro actualizado.
+        </p>
+        <form (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="nombre">
+                    <i class="fas fa-user-md"></i> Nombre:
+                </label>
+                <input type="text" id="nombre" [(ngModel)]="veterinario.nombre" name="nombre" required class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="correo">
+                    <i class="fas fa-envelope"></i> Correo Electrónico:
+                </label>
+                <input type="email" id="correo" [(ngModel)]="veterinario.correo" name="correo" required class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="contrasena">
+                    <i class="fas fa-lock"></i> Contraseña:
+                </label>
+                <input type="password" id="contrasena" [(ngModel)]="veterinario.contrasena" name="contrasena" required class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="especialidad">
+                    <i class="fas fa-briefcase-medical"></i> Especialidad:
+                </label>
+                <input type="text" id="especialidad" [(ngModel)]="veterinario.especialidad" name="especialidad" required class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="foto">
+                    <i class="fas fa-image"></i> Foto (URL):
+                </label>
+                <input type="text" id="foto" [(ngModel)]="veterinario.foto" name="foto" required class="form-control">
+            </div>
+
+
+            <button type="submit" class="submit-button">Agregar Veterinario</button>
+        </form>
+    </section>
+
+    <!-- Botón de Volver -->
+    <div style="text-align: center; margin-top: 20px;">
+        <button class="btn btn-secondary" (click)="goBack()">Volver</button>
+    </div>
+</main>

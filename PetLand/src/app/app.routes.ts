@@ -15,11 +15,19 @@ import { PetDetailsComponent } from './pet-details/pet-details.component';
 import { PetEditComponent } from './pet-edit/pet-edit.component';
 import { PetAddComponent } from './pet-add/pet-add.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
+import { VeterinariansListComponent } from './veterinarians-list/veterinarians-list.component';
+import { VeterinarianDetailsComponent } from './veterinarian-details/veterinarian-details.component';
+import { VeterinarianEditComponent } from './veterinarian-edit/veterinarian-edit.component';
+import { VeterinarianAddComponent } from './veterinarian-add/veterinarian-add.component';
+import { PortalAdminComponent } from './portal-admin/portal-admin.component';
 
 export const routes: Routes = [
   { path: '', component: LandingComponent }, 
 
   { path: 'portal-veterinario', component: PortalVeterinarioComponent },
+
+  { path: 'portal-admin', component: PortalAdminComponent },
+
 
   // Rutas para el login de propietarios y veterinarios
   { path: 'login/owner', component: OwnerLoginComponent },  // /login/owner en lugar de /owner-login
@@ -43,6 +51,13 @@ export const routes: Routes = [
   // Rutas para mascotas activas e inactivas
   { path: 'pets-activas', component: ActivePetsComponent },  // Mascotas activas
   { path: 'pets-inactivas', component: InactivePetsComponent }, // Mascotas inactivas
+
+  // Rutas para la lista de veterinarios
+  { path: 'veterinarios', component: VeterinariansListComponent },
+  { path: 'veterinarios/add', component: VeterinarianAddComponent  },
+  { path: 'veterinarios/:id', component: VeterinarianDetailsComponent },  
+  { path: 'veterinarios/:id/edit', component: VeterinarianEditComponent },
+
 
   // Ruta para manejar rutas no encontradas (opcional)
   { path: '**', redirectTo: '', pathMatch: 'full' }  // Redirecciona a la página de inicio si la ruta no existe

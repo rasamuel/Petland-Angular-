@@ -1,0 +1,52 @@
+<br>
+<br>
+<br>
+<br>
+<app-admin-navbar></app-admin-navbar>
+<main>
+    <h1>Editar Veterinario</h1>
+    <p class="form-intro">
+        Antes de actualizar los datos del veterinario, por favor, asegúrate de revisar cada campo con atención. Asegúrate de que la información esté correcta para garantizar una mejor atención a las mascotas.
+    </p>
+    <form (ngSubmit)="onSubmit()" class="veterinarian-edit-form">
+        <div class="form-group">
+            <label for="nombre">
+                <i class="fas fa-user-md"></i> Nombre:
+            </label>
+            <input type="text" id="nombre" [(ngModel)]="veterinario.nombre" name="nombre" required class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="correo">
+                <i class="fas fa-envelope"></i> Correo:
+            </label>
+            <input type="email" id="correo" [(ngModel)]="veterinario.correo" name="correo" required class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="especialidad">
+                <i class="fas fa-stethoscope"></i> Especialidad:
+            </label>
+            <input type="text" id="especialidad" [(ngModel)]="veterinario.especialidad" name="especialidad" required class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="foto">
+                <i class="fas fa-image"></i> Foto (URL):
+            </label>
+            <input type="text" id="foto" [(ngModel)]="veterinario.foto" name="foto" required class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="estado">
+                <i class="fas fa-check-circle"></i> Estado:
+            </label>
+            <select id="estado" [(ngModel)]="veterinario.estado" name="estado" class="form-control">
+                <option [ngValue]="true">Activo</option>
+                <option [ngValue]="false">Inactivo</option>
+            </select>
+        </div>
+        <button type="submit" class="butons">Actualizar Veterinario</button>
+    </form>
+
+    <!-- Botón de Volver -->
+    <div style="text-align: center; margin-top: 20px;">
+        <button class="btn btn-secondary" (click)="goBack()">Volver</button>
+    </div>
+</main>

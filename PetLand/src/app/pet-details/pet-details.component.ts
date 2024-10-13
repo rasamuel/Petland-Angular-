@@ -17,9 +17,9 @@ export class PetDetailsComponent implements OnInit {
   pet: Pet | undefined;  // Variable para almacenar los detalles de la mascota
 
   constructor(
-    private petService: PetService,  // Inyecta el servicio
-    private route: ActivatedRoute,   // Inyecta ActivatedRoute para obtener el ID
-    private location: Location       // Inyecta Location para la función de "Volver"
+    private petService: PetService,  
+    private route: ActivatedRoute,   
+    private location: Location      
   ) { }
 
   ngOnInit(): void {

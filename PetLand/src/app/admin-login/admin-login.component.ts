@@ -22,7 +22,7 @@ export class AdminLoginComponent {
       this.loginService.loginAdministrador(this.correo, this.contrasena).subscribe({
         next: (response) => {
           console.log('Login exitoso:', response);
-          this.router.navigate(['/admin-dashboard']);  // Redirigir a la página del administrador
+          this.router.navigate(['/portal-admin']);  // Redirigir a la página del administrador
         },
         error: (error) => {
           console.error('Error en el login:', error);

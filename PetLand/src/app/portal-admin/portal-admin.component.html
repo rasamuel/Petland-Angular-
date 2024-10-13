@@ -1,0 +1,31 @@
+<br>
+<br>
+<br>
+<br>
+<app-admin-navbar></app-admin-navbar>
+<main>
+    <!-- Sección de bienvenida -->
+    <section class="welcome-section">
+        <h2>Bienvenido al Portal de Administración</h2>
+        <p>Desde aquí puedes gestionar de manera eficiente la información relacionada con los veterinarios y acceder al dashboard con estadísticas del sistema.</p>
+    </section>
+
+    <!-- Sección de funciones principales -->
+    <section class="features-section">
+        <!-- Gestión de Veterinarios -->
+        <div class="feature">
+            <i class="fas fa-user-md feature-icon"></i> <!-- Icono de veterinario -->
+            <h3>Administrar Veterinarios</h3>
+            <p>Gestiona la lista de veterinarios registrados en el sistema, actualiza sus datos y administra su estado.</p>
+            <button class="feature-button" routerLink="/veterinarios">Ir a Veterinarios</button>
+        </div>
+
+        <!-- Dashboard del sistema -->
+        <div class="feature">
+            <i class="fas fa-chart-line feature-icon"></i> <!-- Icono de dashboard -->
+            <h3>Dashboard del Sistema</h3>
+            <p>Consulta el dashboard con las principales métricas y estadísticas sobre el funcionamiento del sistema.</p>
+            <button class="feature-button" routerLink="/admin-dashboard">Ir al Dashboard</button>
+        </div>
+    </section>
+</main>

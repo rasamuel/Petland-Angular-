@@ -1,0 +1,33 @@
+<br>
+<br>
+<br>
+<br>
+<app-admin-navbar></app-admin-navbar>
+<main>
+    <h1>Detalles del Veterinario</h1>
+    <section class="veterinarian-detail" *ngIf="veterinarian">
+        <div class="veterinarian-detail-header">
+            <h2>{{ veterinarian.nombre }}</h2>
+            <img [src]="veterinarian.foto" alt="Imagen del Veterinario" class="veterinarian-image">
+        </div>
+        <div class="veterinarian-detail-info">
+            <div class="info-item">
+                <i class="fas fa-user-md icon"></i>
+                <p><strong>Especialidad:</strong> {{ veterinarian.especialidad }}</p>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-envelope icon"></i>
+                <p><strong>Correo:</strong> {{ veterinarian.correo }}</p>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-check icon"></i>
+                <p><strong>Estado:</strong> {{ veterinarian.estado ? 'Activo' : 'Inactivo' }}</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Botón de Volver -->
+    <div style="text-align: center; margin-top: 20px;">
+        <button class="btn btn-secondary" (click)="goBack()">Volver</button>
+    </div>
+</main>

@@ -1,22 +1,27 @@
 export class Veterinario {
-    id: number;
-    contrasena: string;
-    especialidad: string;
-    foto: string;
-    nombre: string;
-  
-    constructor(
-      id: number = 0,
-      contrasena: string = '',
-      especialidad: string = '',
-      foto: string = '',
-      nombre: string = ''
-    ) {
-      this.id = id;
-      this.contrasena = contrasena;
-      this.especialidad = especialidad;
-      this.foto = foto;
-      this.nombre = nombre;
-    }
+  id: number;
+  correo: string;
+  contrasena: string;
+  especialidad: string;
+  foto: string;
+  nombre: string;
+  estado: boolean;
+
+  constructor(
+    id: number = 0,
+    correo: string = '',
+    contrasena: string = '',
+    especialidad: string = '',
+    foto: string = '',
+    nombre: string = '',
+    estado: boolean = true
+  ) {
+    this.id = id;
+    this.correo = correo;
+    this.contrasena = contrasena;
+    this.especialidad = especialidad;
+    this.foto = foto;
+    this.nombre = nombre;
+    this.estado = estado;
   }
-  
+}
