@@ -51,6 +51,10 @@ export class VeterinaryDashboardComponent implements OnInit {
         this.ventasTotales = data.ventasTotales;
         this.gananciasTotales = data.gananciasTotales;
         this.tratamientosPorMedicamento = data.tratamientosPorMedicamento;
+        
+        // Imprimir en consola el valor de tratamientosPorMedicamento
+        console.log('Tratamientos por Medicamento:', this.tratamientosPorMedicamento);
+
         this.topTratamientos = data.topTratamientos;
       },
       error: (error) => {

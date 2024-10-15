@@ -23,6 +23,7 @@ import { PortalAdminComponent } from './portal-admin/portal-admin.component';
 import { VeterinarioMascotasTratadasComponent } from './veterinario-mascotas-tratadas/veterinario-mascotas-tratadas.component';
 import { VeterinarioTratamientoComponent } from './veterinario-tratamiento/veterinario-tratamiento.component';
 import { VeterinaryDashboardComponent } from './veterinary-dashboard/veterinary-dashboard.component';
+import { PetDetailOwnerComponent } from './pet-detail-owner/pet-detail-owner.component';
 
 export const routes: Routes = [
   { path: '', component: LandingComponent }, 
@@ -51,6 +52,7 @@ export const routes: Routes = [
   { path: 'pets/add', component: PetAddComponent },          // Agregar una mascota
   { path: 'pets/:id', component: PetDetailsComponent },      // Ver detalles de una mascota
   { path: 'pets/:id/edit', component: PetEditComponent },    // Editar una mascota
+  { path: 'pets/owner/:id', component: PetDetailOwnerComponent }, // Ver detalles de una mascota
   // Rutas para mascotas activas e inactivas
   { path: 'pets-activas', component: ActivePetsComponent },  // Mascotas activas
   { path: 'pets-inactivas', component: InactivePetsComponent }, // Mascotas inactivas

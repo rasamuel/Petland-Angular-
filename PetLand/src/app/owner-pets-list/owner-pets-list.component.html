@@ -1,3 +1,5 @@
+<br>
+
 <main>
   <header>
     <h1>Bienvenido, {{ ownerName }}</h1>
@@ -17,6 +19,7 @@
           <th>Edad</th>
           <th>Peso</th>
           <th>Enfermedad</th>
+          <th>Acciones</th>
         </tr>
       </thead>
       <tbody>
@@ -28,6 +31,9 @@
           <td>{{ pet.edad }} años</td>
           <td>{{ pet.peso }} kg</td>
           <td>{{ pet.enfermedad }}</td>
+          <td class="actions">
+            <button class="butons" (click)="onDetails(pet.id)">Detalles</button>
+        </td>
         </tr>
       </tbody>
     </table>

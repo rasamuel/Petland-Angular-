@@ -25,7 +25,7 @@ export class VeterinarioTratamientoComponent implements OnInit {
   pets: Pet[] = [];
   medicamentos: Medicamento[] = [];
   tratamiento: Tratamiento = new Tratamiento();
-  veterinario: Veterinario | null = null; // Cambiado a un solo objeto en lugar de un arreglo
+  veterinario: Veterinario | null = null;
 
 
   constructor(
@@ -43,7 +43,7 @@ export class VeterinarioTratamientoComponent implements OnInit {
   }
 
   cargarMascotas(): void {
-    this.petService.getPets().subscribe({
+    this.petService.getActivePets().subscribe({
       next: (data: Pet[]) => {
         this.pets = data;
       },
@@ -82,6 +82,15 @@ export class VeterinarioTratamientoComponent implements OnInit {
                 this.tratamiento.fecha = new Date();
 
                 console.log('Unidades disponibles del medicamento:', this.tratamiento.medicamento.unidadesDisponibles);
+                
+                // Verifica si la cantidad es 0
+                if (this.tratamiento.cantidad <= 0) {
+                    alert('La cantidad del medicamento debe ser mayor que 0.'); // Mensaje de error
+                    console.log('Error: La cantidad del medicamento es igual o menor a 0.');
+                    return; // Detiene la ejecución
+                }
+
+                // Verifica si hay suficientes unidades disponibles
                 if (this.tratamiento.medicamento.unidadesDisponibles >= this.tratamiento.cantidad) {
                     this.tratamientoService.createTratamiento(this.tratamiento).subscribe({
                         next: (response) => {
@@ -111,6 +120,7 @@ export class VeterinarioTratamientoComponent implements OnInit {
         }
     }
 }
+
 
 goBack(): void {
   this.router.navigate([`/portal-veterinario`]);

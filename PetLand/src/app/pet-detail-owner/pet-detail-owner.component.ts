@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { VeterinarianNavbarComponent } from '../veterinarian-navbar/veterinarian-navbar.component';
 import { PetService } from '../services/pet.service';  // Importa el servicio
 import { ActivatedRoute } from '@angular/router';  // Para obtener el parámetro de la URL
 import { Location } from '@angular/common';  // Para manejar la navegación
@@ -9,13 +8,13 @@ import { Tratamiento } from '../models/tratamiento.model'; // Importa el modelo 
 import { TratamientoService } from '../services/tratamiento.service'; // Importa el servicio de tratamientos
 
 @Component({
-  selector: 'app-pet-details',
+  selector: 'app-pet-detail-owner',
   standalone: true,
-  imports: [VeterinarianNavbarComponent, CommonModule],
-  templateUrl: './pet-details.component.html',
-  styleUrls: ['./pet-details.component.css']
+  imports: [CommonModule],
+  templateUrl: './pet-detail-owner.component.html',
+  styleUrl: './pet-detail-owner.component.css'
 })
-export class PetDetailsComponent implements OnInit {
+export class PetDetailOwnerComponent implements OnInit {
   pet: Pet | undefined;  // Variable para almacenar los detalles de la mascota
   tratamientos: Tratamiento[] = []; // Variable para almacenar los tratamientos
 
@@ -65,4 +64,5 @@ export class PetDetailsComponent implements OnInit {
   goBack(): void {
     this.location.back();
   }
+
 }
