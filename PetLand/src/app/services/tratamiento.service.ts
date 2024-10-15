@@ -16,14 +16,14 @@ export class TratamientoService {
     return this.http.post<Tratamiento>('http://localhost:8080/api/tratamientos', tratamiento);
   }
   
-
   // Obtener todas las mascotas tratadas por un veterinario
   getMascotasTratadasPorVeterinario(veterinarioId: number): Observable<Tratamiento[]> {
     return this.http.get<Tratamiento[]>(`${this.apiUrl}/tratamiento/veterinario/${veterinarioId}`);
 }
 
 
-getTratamientosPorMascota(mascotaId: number): Observable<Tratamiento[]> {
-  return this.http.get<Tratamiento[]>(`${this.apiUrl}/tratamiento/mascota/${mascotaId}`);
-}
+  getTratamientosPorMascota(mascotaId: number): Observable<Tratamiento[]> {
+    return this.http.get<Tratamiento[]>(`${this.apiUrl}/tratamiento/mascota/${mascotaId}`);
+  }
+  
 }

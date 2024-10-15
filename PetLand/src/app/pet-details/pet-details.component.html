@@ -4,12 +4,14 @@
 <br>
 <app-veterinarian-navbar></app-veterinarian-navbar>
 <main>
-    <h1>Detalles de la Mascota</h1>
+    <h1 class="text-center">Detalles de la Mascota</h1>
+    
     <section class="pet-detail" *ngIf="pet">
         <div class="pet-detail-header">
-            <h2>{{ pet.nombre }}</h2>
-            <img [src]="pet.imageUrl" alt="Imagen de la Mascota" class="pet-image">
+            <h2 class="pet-name">{{ pet.nombre }}</h2>
+            <img [src]="pet.imageUrl" alt="Imagen de la Mascota" class="pet-image rounded">
         </div>
+        
         <div class="pet-detail-info">
             <div class="info-item">
                 <i class="fas fa-dog icon"></i>
@@ -31,9 +33,9 @@
     </section>
 
     <section *ngIf="tratamientos.length > 0; else noTratamientos">
-        <h2>Tratamientos Dados</h2>
-        <table class="table">
-            <thead>
+        <h2 class="text-center">Tratamientos Dados</h2>
+        <table class="table table-striped">
+            <thead class="thead-light">
                 <tr>
                     <th>ID</th>
                     <th>Medicamento</th>
@@ -44,8 +46,8 @@
             <tbody>
                 <tr *ngFor="let tratamiento of tratamientos">
                     <td>{{ tratamiento.id }}</td>
-                    <td>{{ tratamiento.medicamento.nombre }}</td>
-                    <td>{{ tratamiento.veterinario.nombre }}</td>
+                    <td>{{ tratamiento.medicamento?.nombre }}</td>
+                    <td>{{ tratamiento.veterinario?.nombre }}</td>
                     <td>{{ tratamiento.fecha | date:'shortDate' }}</td>
                 </tr>
             </tbody>
@@ -53,15 +55,11 @@
     </section>
     
     <ng-template #noTratamientos>
-        <p>No se encontraron tratamientos dados para esta mascota.</p>
+        <p class="text-center">No se encontraron tratamientos dados para esta mascota.</p>
     </ng-template>
-    
 
-    <ng-template #noTratamientos>
-        <p>No se encontraron tratamientos dados para esta mascota.</p>
-    </ng-template>
     <!-- Botón de Volver -->
-    <div style="text-align: center; margin-top: 20px;">
+    <div class="text-center" style="margin-top: 20px;">
         <button class="btn btn-secondary" (click)="goBack()">Volver</button>
     </div>
 </main>

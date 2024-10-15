@@ -33,7 +33,7 @@ export class VeterinarioTratamientoComponent implements OnInit {
     private authVeterinarioService: AuthVeterinarioService,
     private petService: PetService,
     private medicamentoService: MedicamentoService,
-    private router: Router,  // Añadido el Router
+    private router: Router, 
     private veterinarioService: VeterinarioService
   ) {}
 
