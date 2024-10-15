@@ -1,0 +1,69 @@
+<br>
+<br>
+<br>
+<br>
+<app-admin-navbar></app-admin-navbar>
+<main>
+    <h1>Dashboard de Veterinaria</h1>
+  
+    <!-- KPIs en tarjetas -->
+    <section class="dashboard-cards">
+      <div class="card">
+        <h3>Total de Tratamientos Último Mes</h3>
+        <p>{{ totalTratamientosUltimoMes }}</p>
+      </div>
+      <div class="card">
+        <h3>Veterinarios Activos</h3>
+        <p>{{ veterinariosActivos }}</p>
+      </div>
+      <div class="card">
+        <h3>Veterinarios Inactivos</h3>
+        <p>{{ veterinariosInactivos }}</p>
+      </div>
+      <div class="card">
+        <h3>Mascotas Totales</h3>
+        <p>{{ totalMascotas }}</p>
+      </div>
+      <div class="card">
+        <h3>Mascotas Activas</h3>
+        <p>{{ mascotasActivas }}</p>
+      </div>
+      <div class="card">
+        <h3>Ventas Totales</h3>
+        <p>{{ ventasTotales | currency:'Col' }}</p>
+      </div>
+      <div class="card">
+        <h3>Ganancias Totales</h3>
+        <p>{{ gananciasTotales | currency:'Col' }}</p>
+      </div>
+    </section>
+  
+    <!-- Tabla de tratamientos por medicamento -->
+    <section>
+      <h2>Tratamientos por Medicamento (Último Mes)</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Medicamento</th>
+            <th>Cantidad</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let medicamento of tratamientosPorMedicamento">
+            <td>{{ medicamento.nombre }}</td>
+            <td>{{ medicamento.cantidad }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  
+    <!-- Top 3 tratamientos con más unidades vendidas -->
+    <section>
+      <h2>Top 3 Tratamientos con Más Unidades Vendidas</h2>
+      <ul>
+        <li *ngFor="let tratamiento of topTratamientos">
+          {{ tratamiento.nombre }} - {{ tratamiento.unidadesVendidas }} unidades
+        </li>
+      </ul>
+    </section>
+</main>

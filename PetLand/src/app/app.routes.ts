@@ -22,6 +22,7 @@ import { VeterinarianAddComponent } from './veterinarian-add/veterinarian-add.co
 import { PortalAdminComponent } from './portal-admin/portal-admin.component';
 import { VeterinarioMascotasTratadasComponent } from './veterinario-mascotas-tratadas/veterinario-mascotas-tratadas.component';
 import { VeterinarioTratamientoComponent } from './veterinario-tratamiento/veterinario-tratamiento.component';
+import { VeterinaryDashboardComponent } from './veterinary-dashboard/veterinary-dashboard.component';
 
 export const routes: Routes = [
   { path: '', component: LandingComponent }, 
@@ -30,7 +31,7 @@ export const routes: Routes = [
 
   { path: 'portal-admin', component: PortalAdminComponent },
 
-
+  { path: 'dashboard', component: VeterinaryDashboardComponent },
   // Rutas para el login de propietarios y veterinarios
   { path: 'login/owner', component: OwnerLoginComponent },  // /login/owner en lugar de /owner-login
   { path: 'login/vet', component: VetLoginComponent },      // /login/vet en lugar de /vet-login
