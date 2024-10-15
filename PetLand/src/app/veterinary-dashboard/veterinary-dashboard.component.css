@@ -1,37 +1,37 @@
 /* Global Styles */
 body {
     margin: 0;
-    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Roboto', sans-serif; /* Uso de una fuente más moderna */
     background-color: #f5f7fa; /* Light background for the entire page */
     color: #333; /* Dark text for contrast */
 }
 
 /* Main Container */
 main {
-    padding: 40px;
+    padding: 50px;
     max-width: 1200px;
     margin: auto;
     background-color: #ffffff; /* White background for main content */
-    border-radius: 12px;
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1); /* Stronger shadow for depth */
+    border-radius: 15px; /* Bordes más redondeados */
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
 }
 
 /* Heading Styles */
 h1 {
     text-align: center;
-    margin-bottom: 40px;
-    font-size: 3em; /* Larger main title */
-    color: #007bff; /* Primary color */
+    margin-bottom: 10px;
+    font-size: 3.5em; /* Tamaño mayor para mayor impacto */
+    color: #0056b3; /* Color primario */
     text-transform: uppercase; /* Uppercase for emphasis */
-    letter-spacing: 1.5px; /* Increased spacing for clarity */
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for a 3D effect */
+    letter-spacing: 2px; /* Espaciado aumentado */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1); /* Sombra para un efecto 3D */
 }
 
 /* Dashboard Cards */
 .dashboard-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Responsive grid */
-    gap: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Reducción del tamaño mínimo de las tarjetas */
+    gap: 30px; /* Espacio reducido entre tarjetas */
     margin-bottom: 50px;
 }
 
@@ -39,38 +39,38 @@ h1 {
 .card {
     background-color: #ffffff;
     border: none;
-    border-radius: 10px;
-    padding: 25px;
+    border-radius: 15px; /* Bordes más redondeados */
+    padding: 20px; /* Reducción del padding */
     text-align: center;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
-    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s; /* Transition effects */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Sombra mejorada */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Transiciones suaves */
 }
 
 .card:hover {
-    transform: translateY(-8px); /* Lift effect on hover */
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
-    background-color: #f0f8ff; /* Light background change on hover */
+    transform: translateY(-10px); /* Levanta la tarjeta */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25); /* Sombra más oscura en hover */
+    background-color: #e7f3fe; /* Fondo azul claro en hover */
 }
 
 .card h3 {
-    font-size: 1.6em;
-    margin-bottom: 15px;
-    color: #343a40; /* Dark gray for titles */
-    font-weight: 600; /* Semi-bold titles */
+    font-size: 1.6em; /* Reducción del tamaño de los títulos */
+    margin-bottom: 15px; /* Espacio reducido entre título y valor */
+    color: #343a40; /* Oscuro para títulos */
+    font-weight: 600; /* Títulos semi-negrita */
 }
 
 .card-value {
-    font-size: 2.2em;
+    font-size: 2.2em; /* Tamaño reducido para valores */
     font-weight: bold;
-    color: #28a745; /* Green for numeric values */
+    color: #28a745; /* Verde para valores numéricos */
 }
 
 /* Section Headings */
 h2 {
-    font-size: 2.2em;
-    margin-bottom: 25px;
-    color: #007bff; /* Consistent section title color */
-    border-bottom: 4px solid #007bff; /* Underline for emphasis */
+    font-size: 2.5em; /* Aumentar tamaño para mejor legibilidad */
+    margin-bottom: 30px;
+    color: #0056b3; /* Consistente para el título de la sección */
+    border-bottom: 4px solid #0056b3; /* Subrayado para énfasis */
     padding-bottom: 10px;
 }
 
@@ -78,26 +78,27 @@ h2 {
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 30px;
-    border-radius: 10px; /* Rounded corners for tables */
-    overflow: hidden; /* Prevent overflow on rounded corners */
+    margin-top: 40px; /* Mayor espacio encima de la tabla */
+    border-radius: 15px; /* Bordes redondeados para tabla */
+    overflow: hidden; /* Previene el desbordamiento en bordes redondeados */
 }
 
 table th, table td {
-    padding: 15px;
+    padding: 20px; /* Mayor padding en celdas */
     text-align: left;
     border-bottom: 2px solid #dee2e6;
-    transition: background-color 0.3s; /* Smooth transition for row background */
+    transition: background-color 0.3s; /* Transición suave para el fondo de las filas */
 }
 
 table th {
-    background-color: #007bff; /* Header background */
+    background-color: #0056b3; /* Fondo de encabezado */
     color: white;
     font-weight: bold;
+    text-transform: uppercase; /* Mayúsculas para encabezados */
 }
 
 table tr:hover {
-    background-color: #e3f2fd; /* Light blue on hover for rows */
+    background-color: #e3f2fd; /* Azul claro en hover para filas */
 }
 
 /* List Styles */
@@ -107,62 +108,79 @@ ul {
 }
 
 ul li {
-    padding: 12px;
+    padding: 15px; /* Mayor padding para elementos de la lista */
     border-bottom: 2px solid #dee2e6;
-    transition: background-color 0.3s; /* Smooth background transition */
+    transition: background-color 0.3s, transform 0.3s; /* Transición suave */
 }
 
 ul li:hover {
-    background-color: #f1f1f1; /* Light background on hover */
+    background-color: #f1f1f1; /* Fondo claro en hover */
+    transform: scale(1.02); /* Aumento ligero en hover */
 }
 
 /* Treatment Names */
 .treatment-name {
     font-weight: bold;
-    color: #007bff; /* Blue for treatment names */
+    color: #0056b3; /* Azul para nombres de tratamiento */
 }
 
 .treatment-quantity {
-    color: #6c757d; /* Subtle gray for quantity */
+    color: #6c757d; /* Gris sutil para cantidad */
 }
 
 /* Button Styles */
 .btn {
     display: inline-block;
-    padding: 12px 25px;
+    padding: 12px 30px; /* Mayor padding para botones */
     border: none;
-    border-radius: 5px;
-    background-color: #007bff; /* Primary button color */
+    border-radius: 8px; /* Bordes redondeados */
+    background-color: #0056b3; /* Color primario del botón */
     color: white;
     text-decoration: none;
-    transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
-    font-size: 1.1em; /* Consistent font size */
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Transiciones suaves */
+    font-size: 1.2em; /* Tamaño consistente */
 }
 
 .btn:hover {
-    background-color: #0056b3; /* Darker button color on hover */
-    transform: translateY(-2px); /* Lift effect */
+    background-color: #004494; /* Color más oscuro en hover */
+    transform: translateY(-2px); /* Efecto de levitación */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra adicional al hover */
+}
+
+/* Icon Styles */
+.card-icon {
+    font-size: 2em; /* Tamaño del ícono reducido */
+    color: #007bff; /* Color del ícono */
+    margin-bottom: 10px; /* Espacio reducido debajo del ícono */
+}
+
+.card-icon i {
+    transition: color 0.3s; /* Transición suave para el color */
+}
+
+.card:hover .card-icon i {
+    color: #0056b3; /* Cambio de color en hover */
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     .dashboard-cards {
-        grid-template-columns: 1fr; /* Single column layout on small screens */
+        grid-template-columns: 1fr; /* Layout de una sola columna en pantallas pequeñas */
     }
 
     h1 {
-        font-size: 2.5em; /* Adjusted font size for mobile */
+        font-size: 2.5em; /* Ajustar tamaño para móviles */
     }
 
     h2 {
-        font-size: 1.8em; /* Smaller section heading */
+        font-size: 2em; /* Títulos más pequeños */
     }
 
     .card {
-        padding: 20px; /* Reduced padding */
+        padding: 15px; /* Reducir padding en tarjetas */
     }
 
     table th, table td {
-        padding: 10px; /* Reduced padding in tables */
+        padding: 15px; /* Reducir padding en tablas */
     }
 }

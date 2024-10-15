@@ -9,53 +9,75 @@
     <!-- KPIs en tarjetas -->
     <section class="dashboard-cards">
         <div class="card">
+            <div class="card-icon">
+                <i class="fas fa-stethoscope"></i> <!-- Icono de stethoscope -->
+            </div>
             <h3>Total de Tratamientos Último Mes</h3>
             <p class="card-value">{{ totalTratamientosUltimoMes }}</p>
         </div>
         <div class="card">
+            <div class="card-icon">
+                <i class="fas fa-user-md"></i> <!-- Icono de veterinario -->
+            </div>
             <h3>Veterinarios Activos</h3>
             <p class="card-value">{{ veterinariosActivos }}</p>
         </div>
         <div class="card">
+            <div class="card-icon">
+                <i class="fas fa-user-times"></i> <!-- Icono de veterinario inactivo -->
+            </div>
             <h3>Veterinarios Inactivos</h3>
             <p class="card-value">{{ veterinariosInactivos }}</p>
         </div>
         <div class="card">
+            <div class="card-icon">
+                <i class="fas fa-paw"></i> <!-- Icono de mascota -->
+            </div>
             <h3>Mascotas Totales</h3>
             <p class="card-value">{{ totalMascotas }}</p>
         </div>
         <div class="card">
+            <div class="card-icon">
+                <i class="fas fa-paw"></i> <!-- Icono de mascota activa -->
+            </div>
             <h3>Mascotas Activas</h3>
             <p class="card-value">{{ mascotasActivas }}</p>
         </div>
         <div class="card">
+            <div class="card-icon">
+                <i class="fas fa-dollar-sign"></i> <!-- Icono de ventas -->
+            </div>
             <h3>Ventas Totales</h3>
             <p class="card-value">{{ ventasTotales | currency:'Col' }}</p>
         </div>
         <div class="card">
+            <div class="card-icon">
+                <i class="fas fa-dollar-sign"></i> <!-- Icono de ganancias -->
+            </div>
             <h3>Ganancias Totales</h3>
             <p class="card-value">{{ gananciasTotales | currency:'Col' }}</p>
         </div>
     </section>
+    
 
     <!-- Tabla de tratamientos por medicamento -->
     <section>
-      <h2>Tratamientos por Medicamento (Último Mes)</h2>
-      <table>
-          <thead>
-              <tr>
-                  <th>Medicamento</th>
-                  <th>Cantidad</th>
-              </tr>
-          </thead>
-          <tbody>
-              <tr *ngFor="let tratamiento of tratamientosPorMedicamento">
-                  <td>{{ tratamiento.medicamento.nombre }}</td> <!-- Acceder al nombre del medicamento -->
-                  <td>{{ tratamiento.cantidad }}</td>
-              </tr>
-          </tbody>  
-      </table>
-  </section>
+        <h2>Tratamientos por Medicamento (Último Mes)</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Medicamento</th>
+                    <th>Cantidad</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let tratamiento of tratamientosPorMedicamento">
+                    <td>{{ tratamiento.medicamento.nombre }}</td>
+                    <td>{{ tratamiento.cantidad }}</td>
+                </tr>
+            </tbody>  
+        </table>
+    </section>
   
 
     <!-- Top 3 tratamientos con más unidades vendidas -->
