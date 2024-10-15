@@ -6,6 +6,7 @@ export class Veterinario {
   foto: string;
   nombre: string;
   estado: boolean;
+  idVeterinario: any;
 
   constructor(
     id: number = 0,

@@ -20,6 +20,8 @@ import { VeterinarianDetailsComponent } from './veterinarian-details/veterinaria
 import { VeterinarianEditComponent } from './veterinarian-edit/veterinarian-edit.component';
 import { VeterinarianAddComponent } from './veterinarian-add/veterinarian-add.component';
 import { PortalAdminComponent } from './portal-admin/portal-admin.component';
+import { VeterinarioMascotasTratadasComponent } from './veterinario-mascotas-tratadas/veterinario-mascotas-tratadas.component';
+import { VeterinarioTratamientoComponent } from './veterinario-tratamiento/veterinario-tratamiento.component';
 
 export const routes: Routes = [
   { path: '', component: LandingComponent }, 
@@ -57,7 +59,8 @@ export const routes: Routes = [
   { path: 'veterinarios/add', component: VeterinarianAddComponent  },
   { path: 'veterinarios/:id', component: VeterinarianDetailsComponent },  
   { path: 'veterinarios/:id/edit', component: VeterinarianEditComponent },
-
+  { path: 'veterinario-mascotas-tratadas', component: VeterinarioMascotasTratadasComponent },
+  { path: 'veterinario-tratamiento', component: VeterinarioTratamientoComponent },
 
   // Ruta para manejar rutas no encontradas (opcional)
   { path: '**', redirectTo: '', pathMatch: 'full' }  // Redirecciona a la página de inicio si la ruta no existe

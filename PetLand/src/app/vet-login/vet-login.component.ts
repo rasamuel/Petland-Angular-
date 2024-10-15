@@ -4,34 +4,47 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { LoginService } from '../services/login.service';
+import { AuthVeterinarioService } from '../services/auth-veterinario.service'; // Asegúrate de importar el servicio
 
 @Component({
   selector: 'app-vet-login',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterModule],  // Asegúrate de que FormsModule esté aquí
+  imports: [CommonModule, FormsModule, RouterModule],
   templateUrl: './vet-login.component.html',
   styleUrls: ['./vet-login.component.css']
 })
 export class VetLoginComponent {
   correo: string = '';
   contrasena: string = '';
+  errorMessage: string = ''; // Para mostrar errores de login
 
-  constructor(private router: Router, private loginService: LoginService) {}
+  constructor(
+    private router: Router,
+    private loginService: LoginService,
+    private authVeterinarioService: AuthVeterinarioService // Inyección del servicio
+  ) {}
 
   onSubmit() {
-    console.log('Datos capturados:', this.correo, this.contrasena);  // Verifica si captura los datos correctamente
+    console.log('Datos capturados:', this.correo, this.contrasena);
+    
     if (this.correo && this.contrasena) {
       this.loginService.loginVeterinario(this.correo, this.contrasena).subscribe({
         next: (response) => {
           console.log('Login exitoso:', response);
+          
+          // Guarda solo el ID en el servicio de autenticación
+          this.authVeterinarioService.login(response); // Guarda el ID directamente
+
+          // Redirige al portal del veterinario
           this.router.navigate(['/portal-veterinario']);
         },
         error: (error) => {
           console.error('Error en el login:', error);
+          this.errorMessage = 'Error al iniciar sesión. Verifica tu correo o contraseña.';
         }
       });
     } else {
-      alert('Por favor completa todos los campos');
+      this.errorMessage = 'Por favor completa todos los campos';
     }
   }
 }

@@ -1,0 +1,33 @@
+<main>
+    <h1>Mascotas Tratadas</h1>
+  
+    <section *ngIf="petsTratadas.length > 0; else noMascotas">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Raza</th>
+            <th>Edad</th>
+            <th>Peso</th>
+            <th>Enfermedad</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let pet of petsTratadas">
+            <td>{{ pet.id }}</td>
+            <td>{{ pet.nombre }}</td>
+            <td>{{ pet.raza }}</td>
+            <td>{{ pet.edad }} años</td>
+            <td>{{ pet.peso }} kg</td>
+            <td>{{ pet.enfermedad }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  
+    <ng-template #noMascotas>
+      <p>No se encontraron mascotas tratadas.</p>
+    </ng-template>
+  </main>
+  
