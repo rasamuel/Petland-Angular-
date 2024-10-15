@@ -18,7 +18,12 @@ export class TratamientoService {
   
 
   // Obtener todas las mascotas tratadas por un veterinario
-  getMascotasTratadasPorVeterinario(veterinarioId: number): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/veterinario/${veterinarioId}`);
-  }
+  getMascotasTratadasPorVeterinario(veterinarioId: number): Observable<Tratamiento[]> {
+    return this.http.get<Tratamiento[]>(`${this.apiUrl}/tratamiento/veterinario/${veterinarioId}`);
+}
+
+
+getTratamientosPorMascota(mascotaId: number): Observable<Tratamiento[]> {
+  return this.http.get<Tratamiento[]>(`${this.apiUrl}/tratamiento/mascota/${mascotaId}`);
+}
 }

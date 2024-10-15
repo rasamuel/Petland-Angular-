@@ -5,6 +5,8 @@ import { PetService } from '../services/pet.service';  // Importa el servicio
 import { ActivatedRoute } from '@angular/router';  // Para obtener el parámetro de la URL
 import { Location } from '@angular/common';  // Para manejar la navegación
 import { Pet } from '../models/pet.model';  // Importa el modelo de Pet
+import { Tratamiento } from '../models/tratamiento.model'; // Importa el modelo de Tratamiento
+import { TratamientoService } from '../services/tratamiento.service'; // Importa el servicio de tratamientos
 
 @Component({
   selector: 'app-pet-details',
@@ -15,11 +17,13 @@ import { Pet } from '../models/pet.model';  // Importa el modelo de Pet
 })
 export class PetDetailsComponent implements OnInit {
   pet: Pet | undefined;  // Variable para almacenar los detalles de la mascota
+  tratamientos: Tratamiento[] = []; // Variable para almacenar los tratamientos
 
   constructor(
-    private petService: PetService,  
-    private route: ActivatedRoute,   
-    private location: Location      
+    private petService: PetService,
+    private tratamientoService: TratamientoService, // Inyectar el servicio de tratamientos
+    private route: ActivatedRoute,
+    private location: Location
   ) { }
 
   ngOnInit(): void {
@@ -33,9 +37,24 @@ export class PetDetailsComponent implements OnInit {
       this.petService.getPetById(id).subscribe({
         next: (data) => {
           this.pet = data;  // Asigna los datos obtenidos a la variable 'pet'
+          this.getTratamientos(); // Obtiene los tratamientos después de obtener la mascota
         },
         error: (error) => {
           console.error('Error al obtener los detalles de la mascota', error);
+        }
+      });
+    }
+  }
+
+  // Método para obtener los tratamientos dados a la mascota
+  getTratamientos(): void {
+    if (this.pet) {
+      this.tratamientoService.getTratamientosPorMascota(this.pet.id).subscribe({
+        next: (data) => {
+          this.tratamientos = data; // Asigna los tratamientos obtenidos a la variable
+        },
+        error: (error) => {
+          console.error('Error al obtener los tratamientos de la mascota', error);
         }
       });
     }

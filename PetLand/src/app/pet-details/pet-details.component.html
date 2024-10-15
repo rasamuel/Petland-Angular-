@@ -1,3 +1,7 @@
+<br>
+<br>
+<br>
+<br>
 <app-veterinarian-navbar></app-veterinarian-navbar>
 <main>
     <h1>Detalles de la Mascota</h1>
@@ -25,7 +29,37 @@
             </div>
         </div>
     </section>
+
+    <section *ngIf="tratamientos.length > 0; else noTratamientos">
+        <h2>Tratamientos Dados</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Medicamento</th>
+                    <th>Veterinario</th>
+                    <th>Fecha</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let tratamiento of tratamientos">
+                    <td>{{ tratamiento.id }}</td>
+                    <td>{{ tratamiento.medicamento.nombre }}</td>
+                    <td>{{ tratamiento.veterinario.nombre }}</td>
+                    <td>{{ tratamiento.fecha | date:'shortDate' }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
     
+    <ng-template #noTratamientos>
+        <p>No se encontraron tratamientos dados para esta mascota.</p>
+    </ng-template>
+    
+
+    <ng-template #noTratamientos>
+        <p>No se encontraron tratamientos dados para esta mascota.</p>
+    </ng-template>
     <!-- Botón de Volver -->
     <div style="text-align: center; margin-top: 20px;">
         <button class="btn btn-secondary" (click)="goBack()">Volver</button>
