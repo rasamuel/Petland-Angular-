@@ -40,7 +40,7 @@ export class VetLoginComponent {
         },
         error: (error) => {
           console.error('Error en el login:', error);
-          this.errorMessage = 'Error al iniciar sesión. Verifica tu correo o contraseña.';
+          this.errorMessage = 'Credenciales incorrectas.';
         }
       });
     } else {

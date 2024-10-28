@@ -17,23 +17,23 @@
     <section>
         <h1>Registrar Dueño</h1>
         <form (ngSubmit)="onSubmit()">  <!-- Cambia submit por ngSubmit -->
-            <div class="form-group">
+            <div class="form-group" id="inputNombre">
                 <label for="nombre"><i class="fas fa-user"></i> Nombre:</label>
                 <input type="text" id="nombre" [(ngModel)]="owner.nombre" name="nombre" required>
             </div>
-            <div class="form-group">
+            <div class="form-group" id="inputCedula">
                 <label for="cedula"><i class="fas fa-id-card"></i> Cédula:</label>
                 <input type="text" id="cedula" [(ngModel)]="owner.cedula" name="cedula" required>
             </div>
-            <div class="form-group">
+            <div class="form-group" id="inputCorreo">
                 <label for="correo"><i class="fas fa-envelope"></i> Correo:</label>
                 <input type="email" id="correo" [(ngModel)]="owner.correo" name="correo" required>
             </div>
-            <div class="form-group">
+            <div class="form-group" id="inputTelefono">
                 <label for="celular"><i class="fas fa-phone"></i> Teléfono:</label>
                 <input type="text" id="celular" [(ngModel)]="owner.celular" name="celular" required>
             </div>
-            <button type="submit" class="btn btn-primary submit-button"><i class="fas fa-save"></i> Registrar</button>
+            <button type="submit" id="btnRegistrarCliente" class="btn btn-primary submit-button"><i class="fas fa-save"></i> Registrar</button>
         </form>
 
         <!-- Botón de regresar -->

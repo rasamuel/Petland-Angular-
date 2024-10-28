@@ -13,7 +13,13 @@
             <label for="contrasena">Contraseña:</label>
             <input type="password" id="contrasena" [(ngModel)]="contrasena" name="contrasena" required>
           </div>
-          <button type="submit" class="btn btn-primary">Login</button>
+          <button type="submit" id="btnLogin" class="btn btn-primary">Login</button>
+          
+          <!-- Mostrar mensaje de error si existe -->
+          <div *ngIf="errorMessage" id="mensajeError" class="alert alert-danger mt-2">
+            {{ errorMessage }}
+          </div>
+          
         </form>
       </div>
     </div>
