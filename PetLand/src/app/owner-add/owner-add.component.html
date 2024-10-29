@@ -16,7 +16,7 @@
 
     <section>
         <h1>Registrar Dueño</h1>
-        <form (ngSubmit)="onSubmit()">  <!-- Cambia submit por ngSubmit -->
+        <form (ngSubmit)="onSubmit()">
             <div class="form-group" id="inputNombre">
                 <label for="nombre"><i class="fas fa-user"></i> Nombre:</label>
                 <input type="text" id="nombre" [(ngModel)]="owner.nombre" name="nombre" required>
@@ -28,6 +28,8 @@
             <div class="form-group" id="inputCorreo">
                 <label for="correo"><i class="fas fa-envelope"></i> Correo:</label>
                 <input type="email" id="correo" [(ngModel)]="owner.correo" name="correo" required>
+                <!-- Div para mostrar el mensaje de error si el correo es inválido -->
+                <div *ngIf="emailError" class="error">{{ emailError }}</div>
             </div>
             <div class="form-group" id="inputTelefono">
                 <label for="celular"><i class="fas fa-phone"></i> Teléfono:</label>
